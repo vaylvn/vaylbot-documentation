@@ -16,7 +16,7 @@ Each conditional has three key components:
 ```yaml
 conditionals:
     conditional_name:
-        condition: "<Python expression>"
+        condition: "<if-statement expression>"
         true:
         - <action_1> ; <arguments>
         - <action_2> ; <arguments>
