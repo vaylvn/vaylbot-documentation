@@ -39,7 +39,7 @@ These events do not provide any tags but allow for actions to be configured:
 - **Tags Available**:
   - `user`: The username of the subscriber.
   - `total-months`: The total number of months the user has been subscribed.
-  - `tier`: The subscription tier (e.g., `1`, `2`, `3`).
+  - `tier`: The subscription tier (e.g., `1`, `2`, `3`, `prime`).
   - `message`: The subscription message (if any).
 
 #### **Gift Sub**
