@@ -2,6 +2,8 @@
 
 This document describes all available actions in **Vayl**, including their arguments, descriptions, and usage examples.
 
+---
+
 ## OBS Integrations
 
 ### `obs:scene`
@@ -23,10 +25,39 @@ This document describes all available actions in **Vayl**, including their argum
 - **Usage**: `obs:hide ; source_name`
 
 ### `obs:toggle`
-- **Description**: Toggles visibility of the specified source in OBS.
+- **Description**: Toggles the visibility of the specified source in OBS.
 - **Arguments**:
   - `source_name` (string): The name of the source to toggle.
 - **Usage**: `obs:toggle ; source_name`
+
+### `obs:label`
+- **Description**: Sets the contents of the specified label in OBS.
+- **Arguments**:
+  - `source_name` (string): The name of the label source.
+  - `text` (string): The new text for the label.
+  - `color` (string): Text color (e.g., `#FFFFFF` for white).
+- **Usage**: `obs:label ; source_name ; text ; color`
+
+### `obs:mediafile`
+- **Description**: Sets the filepath for a media source in OBS.
+- **Arguments**:
+  - `source_name` (string): The name of the media source.
+  - `filepath` (string): Path to the media file.
+- **Usage**: `obs:mediafile ; source_name ; filepath`
+
+### `obs:slideshow`
+- **Description**: Controls a slideshow source in OBS.
+- **Arguments**:
+  - `source_name` (string): The name of the slideshow source.
+  - `action` (string): One of `play`, `pause`, `stop`, `restart`, `next`, `previous`, or `position`.
+- **Usage**: `obs:slideshow ; source_name ; action`
+
+### `obs:filter`
+- **Description**: Enables or disables a filter on an OBS source.
+- **Arguments**:
+  - `filter_name` (string): The filter name.
+  - `enabled` (boolean): `true` to enable, `false` to disable.
+- **Usage**: `obs:filter ; filter_name ; enabled`
 
 ---
 
@@ -44,9 +75,27 @@ This document describes all available actions in **Vayl**, including their argum
   - `time` (float): Time in seconds.
 - **Usage**: `wait ; time`
 
+### `chat`
+- **Description**: Sends a message in the streamer’s chat.
+- **Arguments**:
+  - `message` (string): The message to send.
+- **Usage**: `chat ; message`
+
+### `console`
+- **Description**: Prints a message to the Vayl console.
+- **Arguments**:
+  - `message` (string): The content to print.
+- **Usage**: `console ; message`
+
+### `cmd`
+- **Description**: Executes a system command.
+- **Arguments**:
+  - `command` (string): Command to run.
+- **Usage**: `cmd ; command`
+
 ---
 
-## Variable Management
+## Variables
 
 ### `text`
 - **Description**: Modifies a text variable.
@@ -56,9 +105,40 @@ This document describes all available actions in **Vayl**, including their argum
   - `text` (string): Value to set or append.
 - **Usage**: `text ; name ; action ; text`
 
+### `counter`
+- **Description**: Modifies a counter variable.
+- **Arguments**:
+  - `name` (string): Counter name.
+  - `action` (string): `set`, `increase`, or `decrease`.
+  - `amount` (integer): Value to adjust by.
+- **Usage**: `counter ; name ; action ; amount`
+
+### `boolean`
+- **Description**: Modifies a boolean variable.
+- **Arguments**:
+  - `name` (string): Name of the variable.
+  - `action` (string): `true`, `false`, or `toggle`.
+- **Usage**: `boolean ; name ; action`
+
+### `list`
+- **Description**: Modifies a list variable.
+- **Arguments**:
+  - `name` (string): Name of the list variable.
+  - `action` (string): `add`, `remove`, or `clear`.
+  - `text` (string): Item to add or remove.
+- **Usage**: `list ; name ; action ; text`
+
 ---
 
 ## Advanced Actions
+
+### `editfile`
+- **Description**: Edits a specified text file.
+- **Arguments**:
+  - `filepath` (string): Path to the file.
+  - `action` (string): `overwrite` or `append`.
+  - `text` (string): The content to write.
+- **Usage**: `editfile ; filepath ; action ; text`
 
 ### `tts`
 - **Description**: Generates a text-to-speech message.
@@ -69,10 +149,35 @@ This document describes all available actions in **Vayl**, including their argum
   - `char_limit` (integer): Maximum character length.
 - **Usage**: `tts ; voice ; message ; halt ; char_limit`
 
-### `cmd`
-- **Description**: Executes a system command.
+### `conditional`
+- **Description**: Triggers a conditional action defined in `configuration/conditional-actions.yml`.
 - **Arguments**:
-  - `command` (string): Command to run.
-- **Usage**: `cmd ; command`
+  - `name` (string): Name of the conditional action.
+- **Usage**: `conditional ; name`
+
+### `webhook`
+- **Description**: Triggers a webhook defined in `configuration/webhook`.
+- **Arguments**:
+  - `name` (string): Name of the webhook.
+- **Usage**: `webhook ; name`
 
 ---
+
+## Chat Management
+
+### `vip`
+- **Description**: Adds or removes a user as a VIP.
+- **Arguments**:
+  - `action` (string): `add` or `remove`.
+  - `user` (string): Username to modify.
+- **Usage**: `vip ; action ; user`
+
+### `announce`
+- **Description**: Sends an announcement message in chat.
+- **Arguments**:
+  - `message` (string): The announcement to send.
+- **Usage**: `announce ; message`
+
+---
+
+This structure keeps all the actions organized while ensuring everything from the YAML file is included. Let me know if you'd like me to save this as a `.md` file!
