@@ -1,6 +1,6 @@
 # Conditional Actions
 
-Conditional actions in **Vayl** allow you to create logic-based behavior for your chatbot. These actions evaluate Python expressions using the `eval` function and execute specific actions based on whether the condition evaluates to `true` or `false`.
+Conditional actions in **Vayl** allow you to create logic-based behavior for your chatbot. These actions evaluate Python style expressions, executing specific actions based on whether the condition evaluates to `true` or `false`.
 
 ---
 
