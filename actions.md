@@ -75,12 +75,6 @@ This document describes all available actions in **Vayl**, including their argum
   - `time` (float): Time in seconds.
 - **Usage**: `wait ; time`
 
-### `chat`
-- **Description**: Sends a message in the streamer’s chat.
-- **Arguments**:
-  - `message` (string): The message to send.
-- **Usage**: `chat ; message`
-
 ### `console`
 - **Description**: Prints a message to the Vayl console.
 - **Arguments**:
@@ -88,7 +82,7 @@ This document describes all available actions in **Vayl**, including their argum
 - **Usage**: `console ; message`
 
 ### `cmd`
-- **Description**: Executes a system command.
+- **Description**: Executes a command via Command Prompt.
 - **Arguments**:
   - `command` (string): Command to run.
 - **Usage**: `cmd ; command`
@@ -109,7 +103,7 @@ This document describes all available actions in **Vayl**, including their argum
 - **Description**: Modifies a counter variable.
 - **Arguments**:
   - `name` (string): Counter name.
-  - `action` (string): `set`, `increase`, or `decrease`.
+  - `action` (string): `set`, `increase`, `decrease`, `multiply` or `divide`.
   - `amount` (integer): Value to adjust by.
 - **Usage**: `counter ; name ; action ; amount`
 
@@ -145,7 +139,7 @@ This document describes all available actions in **Vayl**, including their argum
 - **Arguments**:
   - `voice` (string): Voice type.
   - `message` (string): TTS content.
-  - `halt` (boolean): Whether to stop previous playback (`true`/`false`).
+  - `halt` (boolean): Whether to halt subsequent actions. (`true`/`false`).
   - `char_limit` (integer): Maximum character length.
 - **Usage**: `tts ; voice ; message ; halt ; char_limit`
 
@@ -165,12 +159,11 @@ This document describes all available actions in **Vayl**, including their argum
 
 ## Chat Management
 
-### `vip`
-- **Description**: Adds or removes a user as a VIP.
+### `chat`
+- **Description**: Sends a message in the streamer’s chat.
 - **Arguments**:
-  - `action` (string): `add` or `remove`.
-  - `user` (string): Username to modify.
-- **Usage**: `vip ; action ; user`
+  - `message` (string): The message to send.
+- **Usage**: `chat ; message`
 
 ### `announce`
 - **Description**: Sends an announcement message in chat.
@@ -178,6 +171,11 @@ This document describes all available actions in **Vayl**, including their argum
   - `message` (string): The announcement to send.
 - **Usage**: `announce ; message`
 
----
+### `vip`
+- **Description**: Adds or removes a user as a VIP.
+- **Arguments**:
+  - `action` (string): `add` or `remove`.
+  - `user` (string): Username to modify.
+- **Usage**: `vip ; action ; user`
 
-This structure keeps all the actions organized while ensuring everything from the YAML file is included. Let me know if you'd like me to save this as a `.md` file!
+---
