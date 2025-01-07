@@ -1,1 +1,1 @@
-# vaylbot-documentation
+# VaylBot Documentation
