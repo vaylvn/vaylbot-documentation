@@ -106,6 +106,26 @@ These events do not provide any tags but allow for actions to be configured:
   - `user`: The username of the user giving the shoutout.
   - `viewercount`: The number of viewers in the shoutout giver's stream.
 
+---
+
+## Example Event Configuration
+
+Below is an example of how to define actions for a specific event in its corresponding YAML file:
+
+### Example: **Follow Event**
+```yaml
+follow:
+  enabled: true
+  buffer: 0
+  actions:
+  - chat ; Thank you [user] for following!
+  - playsound ; follow_alert
+```
+
+In this example:
+- When a **Follow** event occurs, Vayl will:
+  1. Send a chat message thanking the user by their username.
+  2. Play a sound alert.
 
 ---
 
