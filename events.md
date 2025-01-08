@@ -99,12 +99,12 @@ These events do not provide any tags but allow for actions to be configured:
 #### **Shoutout Given**
 - **Tags Available**:
   - `user`: The username of the user receiving the shoutout.
-  - `viewercount`: The number of viewers in the recipient's stream.
+  - `viewers`: The number of viewers in the recipient's stream.
 
 #### **Shoutout Received**
 - **Tags Available**:
   - `user`: The username of the user giving the shoutout.
-  - `viewercount`: The number of viewers in the shoutout giver's stream.
+  - `viewers`: The number of viewers in the shoutout giver's stream.
 
 ---
 
