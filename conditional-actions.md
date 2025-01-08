@@ -55,14 +55,13 @@ The following tags can be used within a condition to dynamically fetch informati
 
 ## Example Conditionals
 
-### Example 1: `test`
+### Example 1: `conditionals/test.yml`
 ```yaml
-test:
-    condition: '[rnumber:10-30] > 50'
-    true:
-    - chat ; Number is higher!
-    false:
-    - chat ; Number is lower or equal to
+condition: '[rnumber:10-30] > 50'
+true:
+- chat ; Number is higher!
+false:
+- chat ; Number is lower or equal to
 ```
 
 - **Condition**: `[rnumber:10-30] > 50` checks if a random number between 10 and 30 is greater than 50.
@@ -71,13 +70,12 @@ test:
 
 ---
 
-### Example 2: `healthcheck`
+### Example 2: `conditionals/healthcheck.yml`
 ```yaml
-healthcheck:
-    condition: '[counter:health] < 20 and [text:status] == "paralysed"'
-    true:
-    - chat ; Player is on low health AND paralysed!
-    false: []
+condition: '[counter:health] < 20 and [text:status] == "paralysed"'
+true:
+- chat ; Player is on low health AND paralysed!
+false: []
 ```
 
 - **Condition**: `[counter:health] < 20 and [text:status] == "paralysed"`
