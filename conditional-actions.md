@@ -12,7 +12,16 @@ Each conditional has three key components:
 3. **False Actions**: A list of actions executed if the condition evaluates to `false`.
 
 ### Syntax
-
+If working on an individual conditional:
+```yaml
+condition: "<if-statement expression>"
+true:
+- <action_1> ; <arguments>
+- <action_2> ; <arguments>
+false:
+- <action_3> ; <arguments>
+```
+If working on a nested conditional:
 ```yaml
 conditionals:
     conditional_name:
