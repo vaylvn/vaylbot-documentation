@@ -136,4 +136,4 @@ In this example:
 
 ---
 
-By leveraging events and their tags, you can create a fully customized and engaging Twitch chatbot experience with Vayl. Let us know if there are additional events or functionality you'd like to see!
+By leveraging events and their tags, you can create a fully customized and engaging Twitch chatbot experience with Vayl.
