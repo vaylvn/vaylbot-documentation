@@ -11,6 +11,7 @@ Vayl supports multiple TTS voice packs, each with its own set of voices. The bot
 ### Supported Voice Packs
 <details>
 <summary><strong>Cepstral</strong></summary>
+
 - Allison
 - Amy
 - Belle
@@ -42,6 +43,7 @@ Vayl supports multiple TTS voice packs, each with its own set of voices. The bot
 
 <details>
 <summary><strong>IBM Watson</strong></summary>
+
 - en-GB_CharlotteV3Voice
 - en-GB_JamesV3Voice
 - en-GB_KateV3Voice
@@ -77,6 +79,7 @@ Vayl supports multiple TTS voice packs, each with its own set of voices. The bot
 
 <details>
 <summary><strong>Oddcast</strong></summary>
+
 - 4-3-1
 - 6-2-1
 - 5-4-1
@@ -311,6 +314,7 @@ Vayl supports multiple TTS voice packs, each with its own set of voices. The bot
 
 <details>
 <summary><strong>StreamElements</strong></summary>
+
 - Brian
 - Amy
 - Emma
@@ -520,6 +524,7 @@ Vayl supports multiple TTS voice packs, each with its own set of voices. The bot
 
 <details>
 <summary><strong>Streamlabs</strong></summary>
+
 - Brian
 - Amy
 - Emma
@@ -584,6 +589,7 @@ Vayl supports multiple TTS voice packs, each with its own set of voices. The bot
 
 <details>
 <summary><strong>VoiceForge</strong></summary>
+
 - Conrad
 - Designer
 - Diesel
