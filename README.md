@@ -50,5 +50,6 @@ Explore detailed guides for each aspect of the bot:
 - [Events](events.md): Automate responses to stream events like subs and follows.
 - [TTS](tts.md): Configure text-to-speech features and customize voice packs.
 - [PhraseCheck](phrasecheck.md): Configure PhraseCheck to respond to messages in chat.
-
+- [Default Commands](default-commands.md): Learn about the default commands included with Vayl.
+- [Custom Commands](custom-commands.md): Configure custom commands to be used during your stream.
 ---
