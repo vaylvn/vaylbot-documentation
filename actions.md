@@ -1,4 +1,4 @@
-# Actions Documentation
+# Actions
 
 This document describes all available actions in **Vayl**, including their arguments, descriptions, and usage examples.
 
