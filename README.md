@@ -53,6 +53,7 @@ Explore detailed guides for each aspect of the bot:
 - [PhraseCheck](guide/phrasecheck.md): Configure PhraseCheck to respond to messages in chat.
 - [Default Commands](guide/default-commands.md): Learn about the default commands included with Vayl.
 - [Custom Commands](guide/custom-commands.md): Configure custom commands to be used during your stream.
+- [SFX](guide/sfx.md): Configure SFX commands to add more user interation.
 - [Discord Webhooks](guide/discord-webhooks.md): Learn how to integrate both Twitch and Discord.
 - [Redeems](guide/redeems.md): Learn how to add automations from channel point redeems.
 ---
