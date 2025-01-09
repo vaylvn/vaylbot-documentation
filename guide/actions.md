@@ -229,5 +229,13 @@ actions:
   - `user` (string): Username to modify.
 - **Usage**: `vip ; action ; user`
 
+### `timeout`
+- **Description**: Places a user in timeout for a given duration with reaosn.
+- **Arguments**:
+  - `user` (string): Name of the user.
+  - `duration` (int): Duration of the timeout.
+  - `reason` (string): Reason for the timeout.
+- **Usage**: `timeout ; ChattyUser ; 1 ; spamming`
+
 ---
 
