@@ -1,27 +1,42 @@
-# Vayl: A Python-Based Twitch Chatbot
+# Vayl Bot Overview
 
-#### Vayl is a customizable Python-based chatbot designed for Twitch chats, offering extensive integration with OBS and system functions. With Vayl, streamers can create a bespoke user experience, enhancing engagement and interactivity on their streams.
-#### Key Features
-🌟 Seamless Twitch Chat Integration
-- Responds to commands and messages in real-time.
-- Enables chat-triggered interactions, allowing viewers to actively engage with your stream.
+Vayl is a Twitch and Discord bot designed to automate interactions and moderation for a streaming environment.
 
-🖥️ OBS Studio Integration
-- Controls OBS scenes and sources dynamically based on chat activity or preset conditions.
-- Automates transitions, overlays, and other visual elements to match the flow of your stream.
+## Core Features
 
-⚙️ System-Level Control
-- Interacts with your system for custom actions, such as triggering sound effects, executing scripts, or managing files.
-- Provides options for stream automation and management beyond OBS.
+### 1. Twitch Integration
+- **Chat Management:**
+  - Moderates chat for link posting, excessive capitalization, and inappropriate phrases using customizable rules and thresholds.
+- **Commands:**
+  - Supports custom commands, built-in commands like `!uptime`, `!followage`, and interactive features like quotes and sound effects.
+- **Event Handling:**
+  - Responds to Twitch events like subscriptions, raids, follows, hype trains, and ad breaks.
+- **Alerts System:**
+  - Manages a queue of alerts for various events and executes corresponding actions or responses.
 
-🎨 Fully Customizable
-- Tailored for your unique streaming setup and audience preferences.
-- Supports bespoke commands, actions, and logic to ensure Vayl adapts perfectly to your style.
+### 2. Text-to-Speech (TTS)
+- Integrates multiple TTS providers (e.g., Cepstral, IBM Watson, StreamElements).
+- Allows dynamic selection of voice packs and customization of TTS behavior.
 
-🚀 Extendable & Scalable
-- Built with Python, offering the flexibility to expand its features with your own code.
-- Modular design enables future updates and additional integrations.
+### 3. Moderation
+- Handles inappropriate content using link whitelists/blacklists, caps thresholds, and banned phrases.
+- Issues warnings or timeouts to offenders.
 
-Why Choose Vayl?
+### 4. Event-based Actions
+- Supports dynamic responses to Twitch events such as raids, subscriptions, and hype train progressions, configurable via YAML files.
+- Executes customizable actions for specific conditions (e.g., "User reaches a sub streak of 3 months").
 
-Vayl goes beyond a basic chatbot by merging Twitch chat interactivity with direct control over your streaming environment. Whether you're looking to automate repetitive tasks, add unique interactions, or manage your stream with precision, Vayl has you covered.
+### 5. Customizability
+- Configuration-driven via YAML files for actions, commands, phrases, and events.
+- Flexible cooldowns for users and commands.
+
+### 6. Stream Information Management
+- Retrieves and updates stream title, game, and other metadata.
+
+### 7. Quote System
+- Adds, retrieves, and lists quotes from a YAML-based data store.
+
+### 8. Sound Effects
+- Plays sound effects triggered by specific commands, with support for cooldowns and access restrictions.
+
+---
