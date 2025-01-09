@@ -6,7 +6,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
 
 ## **Streamer and Moderator Commands**
 
-### \*\*1. \*\***`!setgame`**
+### `!setgame`
 
 - **Access**: Streamer and Moderators
 - **Description**: Updates the stream's current game.
