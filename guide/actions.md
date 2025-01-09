@@ -1,6 +1,7 @@
 # Actions
 
 This document describes all available actions in **Vayl**, including their arguments, descriptions, and usage examples.
+For a list of available [tags], [click here.](https://github.com/vaylvn/vaylbot-documentation/blob/main/guide/conditional-actions.md#tags-for-fetching-information)
 
 ---
 
