@@ -26,7 +26,7 @@ command:
 
 1. **`<command_name>`**:
    - The name of the command that users will type in chat.
-   - Example: `vd` for `!vd`.
+   - Example: `testing` for `!testing`.
 
 2. **`cooldown`**:
    - Defines the cooldown times for the command.
@@ -50,7 +50,7 @@ command:
 
 ```yaml
 command:
-  vd:
+  testing:
     cooldown:
       user: 0
       global: 5
@@ -63,7 +63,7 @@ command:
 ```
 
 ### **Explanation**
-- **Command Name**: `vd` (triggered by typing `!vd` in chat).
+- **Command Name**: `testing` (triggered by typing `!testing` in chat).
 - **Cooldowns**:
   - **User Cooldown**: `0` seconds (no restriction on individual users).
   - **Global Cooldown**: `5` seconds (prevents anyone from using the command for 5 seconds after it’s triggered).
@@ -117,6 +117,10 @@ Vayl supports the use of dynamic tags within custom commands to provide personal
      ```yaml
      command:
        greet:
+         streamer-only: false
+         sub-only: false
+         mod-only: false
+         vip-only: false
          cooldown:
            user: 5
            global: 5
@@ -144,6 +148,4 @@ Vayl supports the use of dynamic tags within custom commands to provide personal
 
 3. **Test Commands Thoroughly**:
    - Test each command in a controlled environment to avoid issues during live streams.
-
-For more information on available actions, visit the [Actions Guide](actions.md).
 
