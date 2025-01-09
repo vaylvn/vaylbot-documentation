@@ -1,6 +1,6 @@
 # Conditional Actions
 
-Conditional actions in **Vayl** allow you to create logic-based behavior for your chatbot. These actions evaluate Python style expressions, executing specific actions based on whether the condition evaluates to `true` or `false`.
+Conditional actions in **Vayl** allow you to create logic-based behavior for your chatbot. These actions evaluate Python-style expressions, executing specific actions based on whether the condition evaluates to `true` or `false`.
 
 ---
 
@@ -96,18 +96,31 @@ You can use the following operators in your conditions:
 
 ## Using Conditional Actions in Vayl
 
-To trigger a conditional, use:
-```
+To trigger a conditional, you can now use either of the following formats:
+
+### 1. Individual Conditional File
+```yaml
 conditional ; conditional_name
 ```
+This format refers to a standalone file (e.g., `conditionals/conditional_name.yml`) for evaluating the conditional.
+
+### 2. Conditional Within a File
+```yaml
+conditional ; file_name:conditional_name
+```
+This format allows you to reference a specific conditional within a file (e.g., `conditionals/file_name.yml`).
 
 ### Example
 ```yaml
 actions:
 - conditional ; test
 ```
-
-This triggers the `test` conditional, executing the corresponding `true` or `false` actions based on the condition's outcome.
+This triggers the `test` conditional from the `conditionals/test.yml` file.
+```yaml
+actions:
+- conditional ; healthcheck:low_health
+```
+This triggers the `low_health` conditional from the `conditionals/healthcheck.yml` file.
 
 ---
 
@@ -121,4 +134,3 @@ This triggers the `test` conditional, executing the corresponding `true` or `fal
 
 With conditional actions and tags, Vayl allows for dynamic and interactive functionality in your Twitch chat, tailored to your specific needs. Combine these features with other actions for a fully automated and intelligent chatbot.
 
----
