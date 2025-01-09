@@ -220,7 +220,7 @@ actions:
 - **Arguments**:
   - `message` (string): The announcement to send.
   - `color` (string): The color to use `("blue", "green", "orange", "purple", "primary")`
-- **Usage**: `announce ; message`
+- **Usage**: `announce ; message ; color`
 
 ### `vip`
 - **Description**: Adds or removes a user as a VIP.
