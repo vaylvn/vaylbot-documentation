@@ -144,7 +144,7 @@ This document describes all available actions in **Vayl**, including their argum
   - `user` (string): Name of the user.
   - `duration` (int): Duration of the timeout.
   - `reason` (string): Reason for the timeout.
-- **Usage**: `timeout ; ChattyUser ; 1 ; spamming`
+- **Usage**: `timeout ; user ; duration ; reason`
 
 ---
 
