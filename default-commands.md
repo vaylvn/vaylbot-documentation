@@ -119,7 +119,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
     - **Examples**:
       ```
       !debug bits CheerMaster 500
-      !debug bits CheerMaster 500 "Great stream!"
+      !debug bits CheerMaster 500 Great stream!
       ```
 
 13. **Example**:
