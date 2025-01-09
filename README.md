@@ -42,6 +42,7 @@ Vayl is a Twitch and Discord bot designed to automate interactions and moderatio
 ---
 
 ## **Documentation**
+Getting Started? [Here's a quick guide to get you set up!](guide/quickstart.md)
 
 Explore detailed guides for each aspect of the bot:
 
