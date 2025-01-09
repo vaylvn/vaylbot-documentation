@@ -1,4 +1,4 @@
-# Vayl Bot Overview
+# Vayl
 
 Vayl is a Twitch and Discord bot designed to automate interactions and moderation for a streaming environment.
 
