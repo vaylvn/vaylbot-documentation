@@ -1,4 +1,4 @@
-# **Custom Commands Guide**
+# **Custom Commands**
 Looking for [Default Commands?](default-commands.md)
 
 Vayl Bot allows users to create and manage custom commands to extend functionality and tailor the bot's behavior to their needs. Custom commands can trigger specific actions, enforce access restrictions, and manage cooldowns.
