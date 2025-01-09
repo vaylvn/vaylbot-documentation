@@ -1,4 +1,4 @@
-# Text-to-Speech (TTS) Functionality in Vayl
+# Text-to-Speech (TTS)
 
 The Text-to-Speech (TTS) functionality in **Vayl** allows users to integrate dynamic voice interactions into their chatbot. With support for multiple voice packs and customizable parameters, the TTS feature provides a flexible and powerful way to enhance viewer engagement.
 
