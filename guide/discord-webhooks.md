@@ -88,7 +88,7 @@ Webhooks support dynamic tags within their messages to personalize responses. Th
 2. **`[title]`**: The current stream title.
 3. **`[name]`**: The streamer’s Twitch username.
 4. **`[link]`**: A direct link to the streamer’s Twitch channel.
-5. **Other Standard Tags**: Tags like `[ruser]` or `[arg1]` can also be used if applicable.
+5. **Other Standard Tags**: Tags like `[ruser]` or `[rlist:jokes]` can also be used if applicable.
 
 ---
 
