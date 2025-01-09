@@ -125,7 +125,7 @@ Here’s an example of a timed action that periodically thanks the chat for watc
 
 ```yaml
 actions:
-  capybara:
+  thanks:
     max-iterations: 9999
     frequency: 1800
     actions:
