@@ -1,4 +1,4 @@
-# Events Documentation
+# Events
 
 Vayl listens for a variety of events, allowing users to define actions that execute when these events occur. This document outlines all available events and the tags users can utilize to fetch event-specific information. All events are configured through their corresponding `.yml` files located in the `configuration/events` folder.
 
