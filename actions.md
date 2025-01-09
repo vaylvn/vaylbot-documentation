@@ -144,7 +144,7 @@ This document describes all available actions in **Vayl**, including their argum
 - **Usage**: `tts ; voice ; message ; halt ; char_limit`
 
 ### `conditional`
-- **Description**: Triggers a conditional action defined in `configuration/conditional-actions.yml`.
+- **Description**: Triggers a conditional (or nested) action defined in `configuration/conditionals`.
 - **Arguments**:
   - `name` (string): Name of the conditional action.
 - **Usage**: `conditional ; name`
