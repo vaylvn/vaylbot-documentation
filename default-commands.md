@@ -6,7 +6,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
 
 ## **Streamer and Moderator Commands**
 
-### `!setgame`
+`!setgame`
 
 - **Access**: Streamer and Moderators
 - **Description**: Updates the stream's current game.
@@ -15,7 +15,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
   !setgame Minecraft
   ```
 
-### \*\*2. \*\***`!settitle`**
+`!settitle`
 
 - **Access**: Streamer and Moderators
 - **Description**: Updates the stream's title.
