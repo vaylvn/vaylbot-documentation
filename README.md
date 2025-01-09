@@ -49,5 +49,6 @@ Explore detailed guides for each aspect of the bot:
 - [Conditional Actions](conditional-actions.md): Set up condition-based logic for advanced automation.
 - [Events](events.md): Automate responses to stream events like subs and follows.
 - [TTS](tts.md): Configure text-to-speech features and customize voice packs.
+- [PhraseCheck](phrasecheck.md): Configure PhraseCheck to respond to messages in chat.
 
 ---
