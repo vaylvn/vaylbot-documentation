@@ -45,11 +45,11 @@ Vayl is a Twitch and Discord bot designed to automate interactions and moderatio
 
 Explore detailed guides for each aspect of the bot:
 
-- [Actions](actions.md): Learn how to define and trigger custom actions.
-- [Conditional Actions](conditional-actions.md): Set up condition-based logic for advanced automation.
-- [Events](events.md): Automate responses to stream events like subs and follows.
-- [TTS](tts.md): Configure text-to-speech features and customize voice packs.
-- [PhraseCheck](phrasecheck.md): Configure PhraseCheck to respond to messages in chat.
-- [Default Commands](default-commands.md): Learn about the default commands included with Vayl.
-- [Custom Commands](custom-commands.md): Configure custom commands to be used during your stream.
+- [Actions](guide/actions.md): Learn how to define and trigger custom actions.
+- [Conditional Actions](guide/conditional-actions.md): Set up condition-based logic for advanced automation.
+- [Events](guide/events.md): Automate responses to stream events like subs and follows.
+- [TTS](guide/tts.md): Configure text-to-speech features and customize voice packs.
+- [PhraseCheck](guide/phrasecheck.md): Configure PhraseCheck to respond to messages in chat.
+- [Default Commands](guide/default-commands.md): Learn about the default commands included with Vayl.
+- [Custom Commands](guide/custom-commands.md): Configure custom commands to be used during your stream.
 ---
