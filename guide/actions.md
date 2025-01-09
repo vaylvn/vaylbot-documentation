@@ -182,14 +182,6 @@ actions:
 
 ## Advanced Actions
 
-### `editfile`
-- **Description**: Edits a specified text file.
-- **Arguments**:
-  - `filepath` (string): Path to the file.
-  - `action` (string): `overwrite` or `append`.
-  - `text` (string): The content to write.
-- **Usage**: `editfile ; filepath ; action ; text`
-
 ### `tts`
 - **Description**: Generates a text-to-speech message.
 - **Arguments**:
