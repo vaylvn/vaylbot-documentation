@@ -148,6 +148,40 @@ This document describes all available actions in **Vayl**, including their argum
 
 ---
 
+## Variables
+
+### `text`
+- **Description**: Modifies a text variable.
+- **Arguments**:
+  - `name` (string): Name of the variable.
+  - `action` (string): `set` or `append`.
+  - `text` (string): Value to set or append.
+- **Usage**: `text ; name ; action ; text`
+
+### `counter`
+- **Description**: Modifies a counter variable.
+- **Arguments**:
+  - `name` (string): Counter name.
+  - `action` (string): `set`, `increase`, `decrease`, `multiply` or `divide`.
+  - `amount` (integer): Value to adjust by.
+- **Usage**: `counter ; name ; action ; amount`
+
+### `boolean`
+- **Description**: Modifies a boolean variable.
+- **Arguments**:
+  - `name` (string): Name of the variable.
+  - `action` (string): `true`, `false`, or `toggle`.
+- **Usage**: `boolean ; name ; action`
+
+### `list`
+- **Description**: Modifies a list variable.
+- **Arguments**:
+  - `name` (string): Name of the list variable.
+  - `action` (string): `add`, `remove`, or `clear`.
+  - `text` (string): Item to add or remove.
+- **Usage**: `list ; name ; action ; text`
+
+---
 
 ## Timed Actions
 
@@ -202,40 +236,5 @@ actions:
 
 3. **Creative Uses**:
    - Announce random questions or fun facts to spark interaction in chat.
-
----
-
-## Variables
-
-### `text`
-- **Description**: Modifies a text variable.
-- **Arguments**:
-  - `name` (string): Name of the variable.
-  - `action` (string): `set` or `append`.
-  - `text` (string): Value to set or append.
-- **Usage**: `text ; name ; action ; text`
-
-### `counter`
-- **Description**: Modifies a counter variable.
-- **Arguments**:
-  - `name` (string): Counter name.
-  - `action` (string): `set`, `increase`, `decrease`, `multiply` or `divide`.
-  - `amount` (integer): Value to adjust by.
-- **Usage**: `counter ; name ; action ; amount`
-
-### `boolean`
-- **Description**: Modifies a boolean variable.
-- **Arguments**:
-  - `name` (string): Name of the variable.
-  - `action` (string): `true`, `false`, or `toggle`.
-- **Usage**: `boolean ; name ; action`
-
-### `list`
-- **Description**: Modifies a list variable.
-- **Arguments**:
-  - `name` (string): Name of the list variable.
-  - `action` (string): `add`, `remove`, or `clear`.
-  - `text` (string): Item to add or remove.
-- **Usage**: `list ; name ; action ; text`
 
 ---
