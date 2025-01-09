@@ -6,7 +6,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
 
 ## **Streamer and Moderator Commands**
 
-`!setgame`
+### `!setgame`
 
 - **Access**: Streamer and Moderators
 - **Description**: Updates the stream's current game.
@@ -15,7 +15,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
   !setgame Minecraft
   ```
 
-`!settitle`
+### `!settitle`
 
 - **Access**: Streamer and Moderators
 - **Description**: Updates the stream's title.
@@ -33,7 +33,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
 
 ## **Streamer-Only Commands**
 
-### \*\*1. \*\***`!debug`**
+### `!debug`
 
 `!debug` is a powerful command designed for streamers to simulate various events for testing purposes. It allows you to ensure that actions, triggers, and integrations work as expected.
 
@@ -128,7 +128,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
     !debug sub
     ```
 
-### \*\*2. \*\***`!reload`**
+### `!reload`
 
 - **Access**: Streamer Only
 - **Description**: Reloads Vayl to apply updated configurations.
@@ -137,22 +137,22 @@ Vayl Bot includes a set of default commands to simplify stream management and en
 
 ## **Commands for All Users**
 
-### \*\*1. \*\***`!game`**
+### `!game`
 
 - **Access**: All Users
 - **Description**: Displays the current game being streamed.
 
-### \*\*2. \*\***`!uptime`**
+### `!uptime`
 
 - **Access**: All Users
 - **Description**: Displays the current stream uptime.
 
-### \*\*3. \*\***`!quotes`**
+### `!quotes`
 
 - **Access**: All Users
 - **Description**: Displays the total number of quotes saved.
 
-### \*\*4. \*\***`!quote <number>`**
+### `!quote <number>`
 
 - **Access**: All Users
 - **Description**: Displays the specified quote by its number.
@@ -161,7 +161,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
   !quote 5
   ```
 
-### \*\*5. \*\***`!followage <user>`**
+### `!followage <user>`
 
 - **Access**: All Users
 - **Description**: Displays how long the specified user has been following the channel.
