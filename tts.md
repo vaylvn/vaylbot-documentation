@@ -11,7 +11,6 @@ Vayl supports multiple TTS voice packs, each with its own set of voices. The bot
 ### Supported Voice Packs
 
 <Cepstral>
-#### **Cepstral**
 - Allison, Amy, Belle, Callie, Charlie, Dallas, Damien, David, Diane, Duchess, Emily, Linda, Robin, Shouty, Walter, William, Whispery, Lawrence, Millie, Duncan, Vittoria, Katrin, Matthias, Isabelle, Jean-Pierre, Alejandra, Miguel
 </Cepstral>
 
