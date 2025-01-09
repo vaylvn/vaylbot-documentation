@@ -89,6 +89,62 @@ This document describes all available actions in **Vayl**, including their argum
 
 ---
 
+## Timed Actions
+
+Timed actions allow users to trigger a set of actions at regular intervals. These are defined in the `timed-actions.yml` file located in the `configuration` folder.
+
+### **Structure of a Timed Action**
+
+```yaml
+actions:
+  <unique_name>:
+    max-iterations: <number>
+    frequency: <time_in_seconds>
+    actions:
+    - <action>
+```
+
+### **Fields Explained**
+
+1. **`<unique_name>`**:
+   - A unique identifier for the timed action.
+
+2. **`max-iterations`**:
+   - The maximum number of times the timed action will trigger.
+   - Set to `9999` for near-unlimited iterations.
+
+3. **`frequency`**:
+   - The time interval (in seconds) between each trigger.
+
+4. **`actions`**:
+   - A list of actions to execute at each interval.
+
+### **Example Timed Action**
+
+Here’s an example of a timed action that periodically thanks the chat for watching:
+
+```yaml
+actions:
+  capybara:
+    max-iterations: 9999
+    frequency: 1800
+    actions:
+    - chat ; Thanks for checking out the channel!
+```
+
+### **Usage Scenarios**
+
+1. **Engagement Messages**:
+   - Periodically thank viewers or encourage engagement.
+
+2. **Promotional Reminders**:
+   - Prompt viewers to visit your socials, join your Discord, or follow the channel.
+
+3. **Creative Uses**:
+   - Announce random questions or fun facts to spark interaction in chat.
+
+---
+
 ## Variables
 
 ### `text`
@@ -181,3 +237,4 @@ This document describes all available actions in **Vayl**, including their argum
 - **Usage**: `vip ; action ; user`
 
 ---
+
