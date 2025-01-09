@@ -1,4 +1,4 @@
-# **SFX Commands Guide**
+# **SFX Commands**
 
 Vayl Bot's **SFX Commands** feature allows users to create and manage an unlimited number of sound commands, all sourced from files stored locally on their computer. This feature provides great flexibility for enhancing viewer engagement with custom sound effects.
 
@@ -105,6 +105,4 @@ sounds:
    - Verify that all sound files are accessible and working properly before going live.
 
 ---
-
-For more information on how to configure other actions, see the [Actions Guide](actions.md).
 
