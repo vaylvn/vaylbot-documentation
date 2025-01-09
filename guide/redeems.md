@@ -96,7 +96,7 @@ redeem:
          buffer: 15
          actions:
          - chat ; 'Get ready for fireworks!'
-         - sound:play ; fireworks.mp3
+         - playsound ; fireworks
          - obs:toggle ; Fireworks Overlay
      ```
 
