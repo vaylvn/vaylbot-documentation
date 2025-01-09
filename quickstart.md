@@ -66,6 +66,7 @@ Once Vayl Bot is running, explore the following guides:
 - [Conditional Actions](conditional-actions.md): Use advanced logic for triggers.
 - [Events Guide](events.md): Automate responses to Twitch events.
 - [TTS Guide](tts.md): Configure text-to-speech for engaging interactions.
+- [PhraseCheck](phrasecheck.md): Configure PhraseCheck to respond to messages in chat.
 
 Enjoy your fully customizable chatbot experience!
 
