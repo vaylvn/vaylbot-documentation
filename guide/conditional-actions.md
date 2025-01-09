@@ -47,7 +47,7 @@ The following tags can be used within a condition to dynamically fetch informati
 - `[uptime:seconds]`: Returns the total stream uptime in seconds.
 - `[viewers]`: Returns the stream's current viewercount.
 - `[followers]`: Returns the total follower count.
-- `[subscriber]`: Returns the total subscriber count.
+- `[subscribers]`: Returns the total subscriber count.
 
 ### Variables
 - `[counter:name]`: Returns the value of the counter file called `name`.
