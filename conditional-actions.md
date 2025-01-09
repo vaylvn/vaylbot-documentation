@@ -23,14 +23,13 @@ false:
 ```
 If working on a nested conditional `("conditional_name" within conditionals/conditional_name.yml)`:
 ```yaml
-conditionals:
-    conditional_name:
-        condition: "<if-statement expression>"
-        true:
-        - <action_1> ; <arguments>
-        - <action_2> ; <arguments>
-        false:
-        - <action_3> ; <arguments>
+conditional_name:
+    condition: "<if-statement expression>"
+    true:
+    - <action_1> ; <arguments>
+    - <action_2> ; <arguments>
+    false:
+    - <action_3> ; <arguments>
 ```
 
 ---
