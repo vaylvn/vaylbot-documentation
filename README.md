@@ -40,3 +40,14 @@ Vayl is a Twitch and Discord bot designed to automate interactions and moderatio
 - Plays sound effects triggered by specific commands, with support for cooldowns and access restrictions.
 
 ---
+
+## **Documentation**
+
+Explore detailed guides for each aspect of the bot:
+
+- [Actions](actions.md): Learn how to define and trigger custom actions.
+- [Conditional Actions](conditional-actions.md): Set up condition-based logic for advanced automation.
+- [Events](events.md): Automate responses to stream events like subs and follows.
+- [TTS](tts.md): Configure text-to-speech features and customize voice packs.
+
+---
