@@ -2,7 +2,7 @@
 
 This document describes all available actions in **Vayl**, including their arguments, descriptions, and usage examples.
 
-Be sure to check out [Variable Tags](conditional-actions.md#tags-for-fetching-information)
+Remember: You also have access to [Variable Tags](conditional-actions.md#tags-for-fetching-information)
 
 ---
 
