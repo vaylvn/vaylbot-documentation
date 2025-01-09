@@ -89,6 +89,66 @@ This document describes all available actions in **Vayl**, including their argum
 
 ---
 
+## Advanced Actions
+
+### `tts`
+- **Description**: Generates a text-to-speech message.
+- **Arguments**:
+  - `voice` (string): Voice type.
+  - `message` (string): TTS content.
+  - `halt` (boolean): Whether to halt subsequent actions. (`true`/`false`).
+  - `char_limit` (integer): Maximum character length.
+- **Usage**: `tts ; voice ; message ; halt ; char_limit`
+
+### `conditional`
+- **Description**: Triggers a conditional (or nested) action defined in `configuration/conditionals`.
+- **Arguments**:
+  - `name` (string): Name of the conditional action.
+- **Usage**:
+  - `conditional ; name` (triggers the "name" conditional in 'configuration/conditionals')
+  - `conditional ; name:subname` (triggers the "subname" conditional in 'configuration/conditionals/name.yml')
+
+### `webhook`
+- **Description**: Triggers a webhook defined in `configuration/webhook`.
+- **Arguments**:
+  - `name` (string): Name of the webhook.
+- **Usage**: `webhook ; name`
+
+---
+
+## Chat Management
+
+### `chat`
+- **Description**: Sends a message in the streamer’s chat.
+- **Arguments**:
+  - `message` (string): The message to send.
+- **Usage**: `chat ; message`
+
+### `announce`
+- **Description**: Sends an announcement message in chat.
+- **Arguments**:
+  - `message` (string): The announcement to send.
+  - `color` (string): The color to use `("blue", "green", "orange", "purple", "primary")`
+- **Usage**: `announce ; message ; color`
+
+### `vip`
+- **Description**: Adds or removes a user as a VIP.
+- **Arguments**:
+  - `action` (string): `add` or `remove`.
+  - `user` (string): Username to modify.
+- **Usage**: `vip ; action ; user`
+
+### `timeout`
+- **Description**: Places a user in timeout for a given duration with reaosn.
+- **Arguments**:
+  - `user` (string): Name of the user.
+  - `duration` (int): Duration of the timeout.
+  - `reason` (string): Reason for the timeout.
+- **Usage**: `timeout ; ChattyUser ; 1 ; spamming`
+
+---
+
+
 ## Timed Actions
 
 Timed actions allow users to trigger a set of actions at regular intervals. These are defined in the `timed-actions.yml` file located in the `configuration` folder.
@@ -179,63 +239,3 @@ actions:
 - **Usage**: `list ; name ; action ; text`
 
 ---
-
-## Advanced Actions
-
-### `tts`
-- **Description**: Generates a text-to-speech message.
-- **Arguments**:
-  - `voice` (string): Voice type.
-  - `message` (string): TTS content.
-  - `halt` (boolean): Whether to halt subsequent actions. (`true`/`false`).
-  - `char_limit` (integer): Maximum character length.
-- **Usage**: `tts ; voice ; message ; halt ; char_limit`
-
-### `conditional`
-- **Description**: Triggers a conditional (or nested) action defined in `configuration/conditionals`.
-- **Arguments**:
-  - `name` (string): Name of the conditional action.
-- **Usage**:
-  - `conditional ; name` (triggers the "name" conditional in 'configuration/conditionals')
-  - `conditional ; name:subname` (triggers the "subname" conditional in 'configuration/conditionals/name.yml')
-
-### `webhook`
-- **Description**: Triggers a webhook defined in `configuration/webhook`.
-- **Arguments**:
-  - `name` (string): Name of the webhook.
-- **Usage**: `webhook ; name`
-
----
-
-## Chat Management
-
-### `chat`
-- **Description**: Sends a message in the streamer’s chat.
-- **Arguments**:
-  - `message` (string): The message to send.
-- **Usage**: `chat ; message`
-
-### `announce`
-- **Description**: Sends an announcement message in chat.
-- **Arguments**:
-  - `message` (string): The announcement to send.
-  - `color` (string): The color to use `("blue", "green", "orange", "purple", "primary")`
-- **Usage**: `announce ; message ; color`
-
-### `vip`
-- **Description**: Adds or removes a user as a VIP.
-- **Arguments**:
-  - `action` (string): `add` or `remove`.
-  - `user` (string): Username to modify.
-- **Usage**: `vip ; action ; user`
-
-### `timeout`
-- **Description**: Places a user in timeout for a given duration with reaosn.
-- **Arguments**:
-  - `user` (string): Name of the user.
-  - `duration` (int): Duration of the timeout.
-  - `reason` (string): Reason for the timeout.
-- **Usage**: `timeout ; ChattyUser ; 1 ; spamming`
-
----
-
