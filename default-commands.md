@@ -1,4 +1,5 @@
 # **Default Commands**
+Looking for [Custom Commands?](custom-commands.md)
 
 Vayl Bot includes a set of default commands to simplify stream management and enhance viewer interaction. Below is a comprehensive list of the commands, categorized by their access levels and functionality.
 
