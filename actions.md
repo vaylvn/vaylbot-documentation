@@ -147,7 +147,9 @@ This document describes all available actions in **Vayl**, including their argum
 - **Description**: Triggers a conditional (or nested) action defined in `configuration/conditionals`.
 - **Arguments**:
   - `name` (string): Name of the conditional action.
-- **Usage**: `conditional ; name`
+- **Usage**:
+  - `conditional ; name` (triggers the "name" conditional in 'configuration/conditionals')
+  - `conditional ; name:subname` (triggers the "subname" conditional in 'configuration/conditionals/name.yml')
 
 ### `webhook`
 - **Description**: Triggers a webhook defined in `configuration/webhook`.
