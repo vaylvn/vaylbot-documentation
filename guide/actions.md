@@ -219,6 +219,7 @@ actions:
 - **Description**: Sends an announcement message in chat.
 - **Arguments**:
   - `message` (string): The announcement to send.
+  - `color` (string): The color to use `("blue", "green", "orange", "purple", "primary")`
 - **Usage**: `announce ; message`
 
 ### `vip`
