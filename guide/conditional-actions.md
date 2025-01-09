@@ -45,6 +45,9 @@ The following tags can be used within a condition to dynamically fetch informati
 - `[system:dateuk]`: Returns the current date in UK format (DD/MM/YYYY).
 - `[system:time]`: Returns the current time in HH:MM:SS format.
 - `[uptime:seconds]`: Returns the total stream uptime in seconds.
+- `[viewers]`: Returns the stream's current viewercount.
+- `[followers]`: Returns the total follower count.
+- `[subscriber]`: Returns the total subscriber count.
 
 ### Variables
 - `[counter:name]`: Returns the value of the counter file called `name`.
