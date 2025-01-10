@@ -79,6 +79,8 @@ command:
 
 Vayl supports the use of dynamic tags within custom commands to provide personalized responses and interactions. Below are the available tags:
 
+[Full list of Variable Tags](conditional-actions.md#tags-for-fetching-information)
+
 1. **`[user]`**:
    - Returns the username of the person who triggered the command.
    - Example: "Thank you, [user]!"
