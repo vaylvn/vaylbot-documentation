@@ -123,11 +123,21 @@ Vayl Bot includes a set of default commands to simplify stream management and en
       !debug bits CheerMaster 500 Great stream!
       ```
 
-13. **Example**:
+13. **sub**: Simulates a subscription.
 
-    ```
-    !debug sub
-    ```
+    - **Arguments**: `<username>` `<total-months>` `[sub-message]` (optional).
+    - **Examples**:
+      ```
+      !debug sub AwesomeUser 10 Glad to be here!
+      ```
+
+14. **giftsub**: Simulates a gifted subscription.
+
+    - **Arguments**: `<username>` `<total-subs>`.
+    - **Examples**:
+      ```
+      !debug giftsub AwesomeUser 10
+      ```
 
 ### `!reload`
 
