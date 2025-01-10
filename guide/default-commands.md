@@ -38,6 +38,8 @@ Vayl Bot includes a set of default commands to simplify stream management and en
 
 `!debug` is a powerful command designed for streamers to simulate various events for testing purposes. It allows you to ensure that actions, triggers, and integrations work as expected.
 
+Remember: Events provide [variables](events.md)
+
 #### **Usage**:
 
 ```bash
