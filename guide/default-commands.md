@@ -25,7 +25,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
   !settitle Building an Epic Base!
   ```
 
-### \*\*3. \*\***`!addquote`**
+### `!addquote`
 
 - **Access**: Streamer and Moderators
 - **Description**: Saves a chat message as a quote. Must be used as a reply to the message.
