@@ -44,7 +44,8 @@ These events do not provide any tags but allow for actions to be configured:
 
 #### **Gift Sub**
 - **Tags Available**:
-  - `user`: The username of the user gifting the subs.
+  - `gifter`: The username of the user gifting the subs.
+  - `gifted`: The username of the user receiving the sub.
   - `amount`: The number of subs gifted.
   - `tier`: The subscription tier of the gifted subs.
 
