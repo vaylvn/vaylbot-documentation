@@ -135,7 +135,7 @@ Remember: Be sure to utilize [event tags](events.md)
 
 14. **giftsub**: Simulates a gifted subscription.
 
-    - **Arguments**: `<username>` `<total-subs>`.
+    - **Arguments**: `<username>` `<tier>` `<total-subs>`.
     - **Examples**:
       ```
       !debug giftsub AwesomeUser 10
