@@ -27,4 +27,4 @@ The following tags can be used within a condition to dynamically fetch informati
 
 ### String Manipulation
 - `[xstring:text:amount]`: Returns the given `text` repeated `amount` times.
-- `[nickname:user]`: Returns the `nickname` of the given `user`. (returns standard username if no nickname)
+- `[nickname:user]`: Returns the `nickname` (configuration/nicknames.yml) of the given `user`.
