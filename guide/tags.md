@@ -11,7 +11,7 @@ The following tags can be used within a condition to dynamically fetch informati
 - `[ruser]`: Returns a random user from the chat.
 - `[followers]`: Returns the total follower count.
 - `[subscribers]`: Returns the total subscriber count.
-- `[ugame:user]`: Returns the given user's current stream game.
+- `[ugame:user]`: Returns the current stream game for the specified `user`.
 
 ### Variables
 - `[counter:name]`: Returns the value of the counter file called `name`.
