@@ -91,6 +91,18 @@ Remember: You also have access to [Variable Tags](conditional-actions.md#tags-fo
 
 ---
 
+## Twitch Integration
+
+### `createclip`
+- **Description**: Creates a Twitch clip, saving the url as a Vayl variable.
+- **Usage**: `createclip`
+
+### `addmarker`
+- **Description**: Adds a marker to the current stream.
+- **Usage**: `addmarker`
+
+---
+
 ## Advanced Actions
 
 ### `tts`
