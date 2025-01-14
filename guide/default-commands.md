@@ -73,19 +73,6 @@ While these events can also be run in the same way, they allow customization thr
 - **`bits`**:
   - **Available Arguments**: `user` (`u`), `amount` (`b`), `message` (`msg`)
 
-### Argument Prefixes
-
-To customize arguments for event types, use the prefixes (or their shorthand versions) as follows:
-
-- `user:` or `u:`
-- `tier:` or `t:`
-- `months:` or `m:`
-- `gifts:` or `g:`
-- `message:` or `msg:`
-- `bits:` or `b:`
-- `level:` or `l:`
-- `viewers:` or `v:`
-
 ### Examples
 
 To simulate a subscription with a specific user and tier:
