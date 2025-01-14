@@ -34,9 +34,7 @@ Vayl Bot includes a set of default commands to simplify stream management and en
 
 ## **Streamer-Only Commands**
 
-# Vayl Bot Commands
-
-## Debug Command
+### `!debug`
 
 The `!debug` command allows users to simulate various bot events for testing purposes. Some event types take no arguments, while others can be customized using specific arguments and their shorthand prefixes.
 
