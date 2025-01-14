@@ -53,7 +53,7 @@ These event types are called simply by typing `!debug` followed by the event typ
 - `stream-offline`
 
 ### Event Types With Arguments
-These event types allow customization through specific arguments:
+While these events can also be run in the same way, they allow customization through specific arguments:
 
 - **`sub`**:
   - **Available Arguments**: `user` (`u`), `tier` (`t`), `months` (`m`), `message` (`msg`)
