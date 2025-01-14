@@ -34,112 +34,74 @@ Vayl Bot includes a set of default commands to simplify stream management and en
 
 ## **Streamer-Only Commands**
 
-### `!debug`
+# Vayl Bot Commands
 
-`!debug` is a powerful command designed for streamers to simulate various events for testing purposes. It allows you to ensure that actions, triggers, and integrations work as expected.
+## Debug Command
 
-Remember: Be sure to utilize [event tags](events.md)
+The `!debug` command allows users to simulate various bot events for testing purposes. Some event types take no arguments, while others can be customized using specific arguments and their shorthand prefixes.
 
-#### **Usage**:
+### Usage
 
-```bash
+```plaintext
 !debug <event_type> [arguments]
 ```
 
-#### **Supported Event Types**:
+### Event Types Without Arguments
+These event types are called simply by typing `!debug` followed by the event type:
 
-1. **ad-break**: Simulates an ad break.
+- `ad-break`
+- `vayl-load`
+- `stream-online`
+- `stream-offline`
 
+### Event Types With Arguments
+These event types allow customization through specific arguments:
 
-2. **vayl-load**: Simulates Vayl loading.
+- **`sub`**:
+  - **Available Arguments**: `user` (`u`), `tier` (`t`), `months` (`m`), `message` (`msg`)
 
+- **`giftsub`**:
+  - **Available Arguments**: `user` (`u`), `tier` (`t`), `gifts` (`g`)
 
-3. **stream-online**: Simulates the stream going online.
+- **`hypetrain`**:
+  - **Available Arguments**: `level` (`l`)
 
+- **`first-time-chat`**, **`first-session-chat`**, **`follow`**:
+  - **Available Arguments**: `user` (`u`)
 
-4. **stream-offline**: Simulates the stream going offline.
+- **`raid`**, **`shoutout-give`**, **`shoutout-receive`**:
+  - **Available Arguments**: `user` (`u`), `viewers` (`v`)
 
+- **`bits`**:
+  - **Available Arguments**: `user` (`u`), `amount` (`b`), `message` (`msg`)
 
-5. **hypetrain**: Simulates a hype train.
+### Argument Prefixes
 
-   - **Arguments**: `<level>` (e.g., 1, 2, etc.).
-   - **Example**:
-     ```
-     !debug hypetrain 2
-     ```
+To customize arguments for event types, use the prefixes (or their shorthand versions) as follows:
 
-6. **first-time-chat**: Simulates a user’s first-ever chat.
+- `user:` or `u:`
+- `tier:` or `t:`
+- `months:` or `m:`
+- `gifts:` or `g:`
+- `message:` or `msg:`
+- `bits:` or `b:`
+- `level:` or `l:`
+- `viewers:` or `v:`
 
-   - **Arguments**: `<username>`.
-   - **Example**:
-     ```
-     !debug first-time-chat NewUser
-     ```
+### Examples
 
-7. **first-session-chat**: Simulates a user’s first chat in the current session.
+To simulate a subscription with a specific user and tier:
 
-   - **Arguments**: `<username>`.
-   - **Example**:
-     ```
-     !debug first-session-chat RegularUser
-     ```
+```plaintext
+!debug sub u:TestUser t:2
+```
 
-8. **follow**: Simulates a follow event.
+To simulate a raid with a custom viewer count:
 
-   - **Arguments**: `<username>`.
-   - **Example**:
-     ```
-     !debug follow NewFollower
-     ```
+```plaintext
+!debug raid u:RaiderUser v:50
+```
 
-9. **raid**: Simulates a raid.
-
-   - **Arguments**: `<username>` `<viewercount>`.
-   - **Example**:
-     ```
-     !debug raid RaiderUser 25
-     ```
-
-10. **shoutout-give**: Simulates giving a shoutout.
-
-    - **Arguments**: `<username>` `<viewercount>`.
-    - **Example**:
-      ```
-      !debug shoutout-give AmazingStreamer 50
-      ```
-
-11. **shoutout-receive**: Simulates receiving a shoutout.
-
-    - **Arguments**: `<username>` `<viewercount>`.
-    - **Example**:
-      ```
-      !debug shoutout-receive GenerousStreamer 30
-      ```
-
-12. **bits**: Simulates a bit donation.
-
-    - **Arguments**: `<username>` `<amount>` `[message]` (optional).
-    - **Examples**:
-      ```
-      !debug bits CheerMaster 500
-      !debug bits CheerMaster 500 Great stream!
-      ```
-
-13. **sub**: Simulates a subscription.
-
-    - **Arguments**: `<username>` `<total-months>` `[sub-message]` (optional).
-    - **Examples**:
-      ```
-      !debug sub AwesomeUser 10 Glad to be here!
-      ```
-
-14. **giftsub**: Simulates a gifted subscription.
-
-    - **Arguments**: `<username>` `<tier>` `<total-subs>`.
-    - **Examples**:
-      ```
-      !debug giftsub AwesomeUser 10
-      ```
 
 ### `!reload`
 
