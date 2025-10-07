@@ -1,183 +1,331 @@
-# Actions
+# **Actions**
 
-This document describes all available actions in **Vayl**, including their arguments, descriptions, and usage examples.
+Actions define what Vayl should do when triggered by an event.
 
----
+All actions follow the format:
+```yaml
+[action] | <required_arg> | [optional_arg]
+```
 
-## OBS Integrations
-
-### `obs:scene`
-- **Description**: Sets the current scene in OBS.
-- **Arguments**:
-  - `scene_name` (string): The name of the scene.
-- **Usage**: `obs:scene ; scene_name`
-
-### `obs:show`
-- **Description**: Shows the specified source in OBS.
-- **Arguments**:
-  - `source_name` (string): The name of the source to show.
-- **Usage**: `obs:show ; source_name`
-
-### `obs:hide`
-- **Description**: Hides the specified source in OBS.
-- **Arguments**:
-  - `source_name` (string): The name of the source to hide.
-- **Usage**: `obs:hide ; source_name`
-
-### `obs:toggle`
-- **Description**: Toggles the visibility of the specified source in OBS.
-- **Arguments**:
-  - `source_name` (string): The name of the source to toggle.
-- **Usage**: `obs:toggle ; source_name`
-
-### `obs:label`
-- **Description**: Sets the contents of the specified label in OBS.
-- **Arguments**:
-  - `source_name` (string): The name of the label source.
-  - `text` (string): The new text for the label.
-  - `color` (string): Text color (e.g., `#FFFFFF` for white).
-- **Usage**: `obs:label ; source_name ; text ; color`
-
-### `obs:mediafile`
-- **Description**: Sets the filepath for a media source in OBS.
-- **Arguments**:
-  - `source_name` (string): The name of the media source.
-  - `filepath` (string): Path to the media file.
-- **Usage**: `obs:mediafile ; source_name ; filepath`
-
-### `obs:slideshow`
-- **Description**: Controls a slideshow source in OBS.
-- **Arguments**:
-  - `source_name` (string): The name of the slideshow source.
-  - `action` (string): One of `play`, `pause`, `stop`, `restart`, `next`, `previous`, or `position`.
-- **Usage**: `obs:slideshow ; source_name ; action`
-
-### `obs:filter`
-- **Description**: Enables or disables a filter on an OBS source.
-- **Arguments**:
-  - `filter_name` (string): The filter name.
-  - `enabled` (boolean): `true` to enable, `false` to disable.
-- **Usage**: `obs:filter ; filter_name ; enabled`
+**Syntax Key:**
+- `<arg>` → Required argument  
+- `[arg]` → Optional argument  
+- Arguments are separated by vertical bars (`|`)  
+- All actions support the [Tag System](tags.md) — e.g., `[user]`, `[counter:name]`, `[text:name]`, etc.
 
 ---
 
-## General Actions
+## 🧩 **OBS Integration**
 
-### `playsound`
-- **Description**: Plays a sound file from the sound directory.
-- **Arguments**:
-  - `file_name` (string): Name of the sound file.
-- **Usage**: `playsound ; file_name`
+<details>
+<summary><strong>obs:scene</strong> — Switch to a specific OBS scene</summary>
 
-### `wait`
-- **Description**: Waits for a specified time before the next action.
-- **Arguments**:
-  - `time` (float): Time in seconds.
-- **Usage**: `wait ; time`
+**Syntax:**
+```yaml
+obs:scene | <scene_name>
+```
 
-### `console`
-- **Description**: Prints a message to the Vayl console.
-- **Arguments**:
-  - `message` (string): The content to print.
-- **Usage**: `console ; message`
+**Example:**
+```yaml
+- obs:scene | Starting Soon
+```
 
-### `cmd`
-- **Description**: Executes a command via Command Prompt.
-- **Arguments**:
-  - `command` (string): Command to run.
-- **Usage**: `cmd ; command`
+| Argument | Description |
+|-----------|-------------|
+| **scene_name** | The exact name of the OBS scene. |
+
+</details>
 
 ---
 
-## Variables
+<details>
+<summary><strong>obs:show</strong> — Show a specific OBS source</summary>
 
-### `text`
-- **Description**: Modifies a text variable.
-- **Arguments**:
-  - `name` (string): Name of the variable.
-  - `action` (string): `set` or `append`.
-  - `text` (string): Value to set or append.
-- **Usage**: `text ; name ; action ; text`
+**Syntax:**
+```yaml
+obs:show | <source>
+```
 
-### `counter`
-- **Description**: Modifies a counter variable.
-- **Arguments**:
-  - `name` (string): Counter name.
-  - `action` (string): `set`, `increase`, `decrease`, `multiply` or `divide`.
-  - `amount` (integer): Value to adjust by.
-- **Usage**: `counter ; name ; action ; amount`
+**Example:**
+```yaml
+- obs:show | Webcam
+```
 
-### `boolean`
-- **Description**: Modifies a boolean variable.
-- **Arguments**:
-  - `name` (string): Name of the variable.
-  - `action` (string): `true`, `false`, or `toggle`.
-- **Usage**: `boolean ; name ; action`
+| Argument | Description |
+|-----------|-------------|
+| **source** | Source name in OBS. |
 
-### `list`
-- **Description**: Modifies a list variable.
-- **Arguments**:
-  - `name` (string): Name of the list variable.
-  - `action` (string): `add`, `remove`, or `clear`.
-  - `text` (string): Item to add or remove.
-- **Usage**: `list ; name ; action ; text`
+</details>
 
 ---
 
-## Advanced Actions
+<details>
+<summary><strong>obs:label</strong> — Update the text or color of a label source</summary>
 
-### `editfile`
-- **Description**: Edits a specified text file.
-- **Arguments**:
-  - `filepath` (string): Path to the file.
-  - `action` (string): `overwrite` or `append`.
-  - `text` (string): The content to write.
-- **Usage**: `editfile ; filepath ; action ; text`
+**Syntax:**
+```yaml
+obs:label | <source> | <text> | [color]
+```
 
-### `tts`
-- **Description**: Generates a text-to-speech message.
-- **Arguments**:
-  - `voice` (string): Voice type.
-  - `message` (string): TTS content.
-  - `halt` (boolean): Whether to halt subsequent actions. (`true`/`false`).
-  - `char_limit` (integer): Maximum character length.
-- **Usage**: `tts ; voice ; message ; halt ; char_limit`
+**Example:**
+```yaml
+- obs:label | StreamTitle | [counter:subs] Subs | #FFFFFF
+```
 
-### `conditional`
-- **Description**: Triggers a conditional (or nested) action defined in `configuration/conditionals`.
-- **Arguments**:
-  - `name` (string): Name of the conditional action.
-- **Usage**:
-  - `conditional ; name` (triggers the "name" conditional in 'configuration/conditionals')
-  - `conditional ; name:subname` (triggers the "subname" conditional in 'configuration/conditionals/name.yml')
+| Argument | Description |
+|-----------|-------------|
+| **source** | Label source name in OBS. |
+| **text** | Text content to display. |
+| **color** | Optional hex color (e.g. `#FFFFFF`). |
 
-### `webhook`
-- **Description**: Triggers a webhook defined in `configuration/webhook`.
-- **Arguments**:
-  - `name` (string): Name of the webhook.
-- **Usage**: `webhook ; name`
+</details>
 
 ---
 
-## Chat Management
+## 💬 **Chat & Messaging**
 
-### `chat`
-- **Description**: Sends a message in the streamer’s chat.
-- **Arguments**:
-  - `message` (string): The message to send.
-- **Usage**: `chat ; message`
+<details>
+<summary><strong>chat</strong> — Send a message in chat</summary>
 
-### `announce`
-- **Description**: Sends an announcement message in chat.
-- **Arguments**:
-  - `message` (string): The announcement to send.
-- **Usage**: `announce ; message`
+**Syntax:**
+```yaml
+chat | <message>
+```
 
-### `vip`
-- **Description**: Adds or removes a user as a VIP.
-- **Arguments**:
-  - `action` (string): `add` or `remove`.
-  - `user` (string): Username to modify.
-- **Usage**: `vip ; action ; user`
+**Example:**
+```yaml
+- chat | Hello [user]!
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **message** | Message to send. Supports tags. |
+
+</details>
+
+---
+
+<details>
+<summary><strong>announce</strong> — Send an announcement message</summary>
+
+**Syntax:**
+```yaml
+announce | <message>
+```
+
+**Example:**
+```yaml
+- announce | Stream starting soon!
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **message** | Text for the announcement. |
+
+</details>
+
+---
+
+## 🔢 **Variables**
+
+<details>
+<summary><strong>counter</strong> — Modify a numeric counter variable</summary>
+
+**Syntax:**
+```yaml
+counter | <name> | <action> | [amount]
+```
+
+**Example:**
+```yaml
+- counter | deaths | increase | 1
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **name** | Counter variable name. |
+| **action** | One of `set`, `increase`, `decrease`, `multiply`, `divide`. |
+| **amount** | Optional numeric value to apply. |
+
+</details>
+
+---
+
+<details>
+<summary><strong>list</strong> — Modify list variables</summary>
+
+**Syntax:**
+```yaml
+list | <name> | <action> | [text]
+```
+
+**Example:**
+```yaml
+- list | viewers | add | [user]
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **name** | List variable name. |
+| **action** | One of `add`, `remove`, `clear`. |
+| **text** | Optional item text for add/remove. |
+
+</details>
+
+---
+
+<details>
+<summary><strong>text</strong> — Modify text variables</summary>
+
+**Syntax:**
+```yaml
+text | <name> | <action> | <text>
+```
+
+**Example:**
+```yaml
+- text | status | set | Stream is live!
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **name** | Variable name. |
+| **action** | One of `set` or `append`. |
+| **text** | The text content to use. |
+
+</details>
+
+---
+
+## ⚙️ **Utility**
+
+<details>
+<summary><strong>sound</strong> — Play a sound file</summary>
+
+**Syntax:**
+```yaml
+sound | <file_name>
+```
+
+**Example:**
+```yaml
+- sound | ding.wav
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **file_name** | The sound file name (must exist in the `sounds` folder). |
+
+</details>
+
+---
+
+<details>
+<summary><strong>wait</strong> — Pause execution for a set number of seconds</summary>
+
+**Syntax:**
+```yaml
+wait | <seconds>
+```
+
+**Example:**
+```yaml
+- wait | 5
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **seconds** | Time to wait (can be decimal). |
+
+</details>
+
+---
+
+<details>
+<summary><strong>console</strong> — Print a message to the Vayl console</summary>
+
+**Syntax:**
+```yaml
+console | <message>
+```
+
+**Example:**
+```yaml
+- console | Action triggered successfully
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **message** | Text to print to the console. |
+
+</details>
+
+---
+
+## 🧠 **Advanced / System**
+
+<details>
+<summary><strong>conditional</strong> — Trigger a conditional from configuration</summary>
+
+**Syntax:**
+```yaml
+conditional | <name>
+```
+
+**Example:**
+```yaml
+- conditional | hype_start
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **name** | Conditional name or `name:subname`. |
+
+</details>
+
+---
+
+<details>
+<summary><strong>webhook</strong> — Trigger a configured webhook</summary>
+
+**Syntax:**
+```yaml
+webhook | <name>
+```
+
+**Example:**
+```yaml
+- webhook | discord_notify
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **name** | Webhook name (defined in `configuration/webhook`). |
+
+</details>
+
+---
+
+<details>
+<summary><strong>tts</strong> — Speak a message aloud via Text-to-Speech</summary>
+
+**Syntax:**
+```yaml
+tts | <voice> | <message> | [halt] | [char_limit]
+```
+
+**Example:**
+```yaml
+- tts | Ivy | [user_input] | true | 500
+```
+
+| Argument | Description |
+|-----------|-------------|
+| **voice** | Voice name (e.g. `Ivy`, `Brian`). |
+| **message** | Message text to speak. |
+| **halt** | Optional boolean — wait for speech before continuing. |
+| **char_limit** | Optional integer — skip if message exceeds this length. |
+
+</details>
 
 ---
