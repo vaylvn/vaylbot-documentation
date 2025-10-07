@@ -1,82 +1,63 @@
-# **PhraseCheck**
+# **Phrase Check**
 
-The **PhraseCheck** system in Vayl allows you to detect specific phrases in chat and trigger predefined actions. This feature is highly customizable and ensures dynamic interaction with your audience.
-
----
-
-## **Phrase Structure**
-
-Each phrase is defined in the `phrases.yml` file, located in the `configuration` folder. Below is the basic structure of a phrase definition:
-
-```yaml
-phrase:
-    <phrase_string>:
-        type: <type>
-        cooldown: <time_in_seconds>
-        actions:
-        - <action>
-```
-
-### **Phrase Settings**
-1. **`type`**:
-   - Defines how the phrase is matched.
-   - Options:
-     - `"matches"`: Matches the exact phrase.
-     - `"contains"`: Triggers when the phrase is contained anywhere in the chat message.
-
-2. **`cooldown`**:
-   - Prevents spam by setting the minimum time (in seconds) between repeated triggers for the same phrase.
-
-3. **`actions`**:
-   - A list of actions to trigger when the phrase is detected.
-   - Actions support standard Vayl action tags (e.g., `[ruser]`, `[counter:name]`).
+The **Phrase Check** system in Vayl allows you to detect specific words or symbols in chat and trigger predefined actions. It’s simple to set up yet powerful enough for complex reactions, making it perfect for quick chat interactions.
 
 ---
 
-## **Example Configuration**
-
-### **Detect an Exact Match**
-The following example triggers an action when the exact message `^` is sent in chat:
+## **Example Setup**
 
 ```yaml
 phrase:
-    ^:
-        type: matches
-        cooldown: 0
-        actions:
-        - chat ; ^
+  hello:
+    type: contains
+    cooldown:
+      user: 5
+      global: 0
+    actions:
+    - chat | Hello [user]!
+    - sound | greet.wav
 ```
-
-- **Type**: Matches the exact `^` symbol.
-- **Cooldown**: No cooldown (can trigger repeatedly).
-- **Actions**: Sends `^` back into the chat.
-
-### **Detect a Contained Phrase**
-The following example triggers an action when the word "hello" appears anywhere in the chat message:
-
-```yaml
-phrase:
-    hello:
-        type: contains
-        cooldown: 10
-        actions:
-        - chat ; Hello there, [user]!
-```
-
-- **Type**: Contains the word "hello."
-- **Cooldown**: 10 seconds.
-- **Actions**: Welcomes the user who typed "hello."
 
 ---
 
-## **Best Practices**
-1. **Avoid Overlapping Phrases**:
-   - Ensure phrases do not conflict with each other to avoid unintended triggers.
+## **How It Works**
 
-2. **Set Appropriate Cooldowns**:
-   - Use cooldowns to prevent spam and maintain smooth chat flow.
+Each entry under `phrase:` defines a trigger and what should happen when it’s detected in chat.
 
-3. **Test Your Configuration**:
-   - Verify your phrases and actions are working as intended before using them in a live stream.
+| Key | Description |
+|------|-------------|
+| **type** | How the chat message is checked. <br>• `matches` → Only triggers if the message exactly matches the phrase.<br>• `contains` → Triggers if the message contains the phrase anywhere. |
+| **cooldown** | Controls how often a phrase can trigger. Includes: <br>• `user` → Per-user cooldown (seconds before the same user can trigger it again).<br>• `global` → Global cooldown (seconds before anyone can trigger it again). |
+| **actions** | A list of actions to perform when the phrase is detected. Each action follows standard Vayl syntax (e.g., `chat | message`, `sound | file.wav`, etc.). |
+
+---
+
+## **Additional Example**
+
+Trigger a response when the exact symbol `^` is used in chat:
+
+```yaml
+phrase:
+  ^:
+    type: matches
+    cooldown:
+      user: 0
+      global: 0
+    actions:
+    - chat | ^
+```
+
+- **Type:** Must exactly match `^`  
+- **Cooldown:** No delay — can trigger freely  
+- **Actions:** Sends `^` back into chat  
+
+---
+
+## **Tips**
+
+- Keep phrases short and unique to prevent conflicts.  
+- Use cooldowns wisely to reduce spam.  
+- You can combine `user` and `global` cooldowns for balanced control.  
+- Test your configuration in a private stream or debug mode before going live.  
 
 ---
