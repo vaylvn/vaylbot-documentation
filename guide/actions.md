@@ -4,7 +4,7 @@ Actions define what Vayl should do when triggered by an event.
 
 All actions follow the format:
 ```yaml
-[action] | <required_arg> | [optional_arg]
+<action> | <required_arg> | [optional_arg]
 ```
 
 **Syntax Key:**
