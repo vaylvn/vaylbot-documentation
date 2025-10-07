@@ -1,56 +1,64 @@
-# Vayl
+# Vayl Documentation Hub
 
-Vayl is a Twitch and Discord bot designed to automate interactions and moderation for a streaming environment.
-
-## Core Features
-
-### Twitch Integration
-- **Chat Management:**
-  - Moderates chat for link posting, excessive capitalization, and inappropriate phrases using customizable rules and thresholds.
-- **Commands:**
-  - Supports custom commands, built-in commands like `!uptime`, `!followage`, and interactive features like quotes and sound effects.
-- **Event Handling:**
-  - Responds to Twitch events like subscriptions, raids, follows, hype trains, and ad breaks.
-- **Alerts System:**
-  - Manages a queue of alerts for various events and executes corresponding actions or responses.
-
-### Text-to-Speech (TTS)
-- Integrates multiple TTS providers (e.g., Cepstral, IBM Watson, StreamElements).
-- Allows dynamic selection of voice packs and customization of TTS behavior.
-
-### Moderation
-- Handles inappropriate content using link whitelists/blacklists, caps thresholds, and banned phrases.
-- Issues warnings or timeouts to offenders.
-
-### Event-based Actions
-- Supports dynamic responses to Twitch events such as raids, subscriptions, and hype train progressions, configurable via YAML files.
-- Executes customizable actions for specific conditions (e.g., "User reaches a sub streak of 3 months").
-
-### Customizability
-- Configuration-driven via YAML files for actions, commands, phrases, and events.
-- Flexible cooldowns for users and commands.
-
-### Stream Information Management
-- Retrieves and updates stream title, game, and other metadata.
-
-### Quote System
-- Adds, retrieves, and lists quotes from a YAML-based data store.
-
-### Sound Effects
-- Plays sound effects triggered by specific commands, with support for cooldowns and access restrictions.
+Vayl is a **Twitch automation and moderation bot** designed for streamers who want full control, lightweight performance, and deep customization — all managed through clean YAML configuration files.
 
 ---
 
-## **Documentation**
-Getting Started? [Here's a quick guide to get you set up!](guide/quickstart.md)
+## Quick Start
 
-Explore detailed guides for each aspect of the bot:
+Get up and running fast:
+- [Setup Guide](guide/quickstart.md)
+- [Installation & Auth](guide/authentication.md)
+- [Configuration Overview](guide/configuration.md)
 
-- [Actions](guide/actions.md): Learn how to define and trigger custom actions.
-- [Conditional Actions](guide/conditional-actions.md): Set up condition-based logic for advanced automation.
-- [Events](guide/events.md): Automate responses to stream events like subs and follows.
-- [TTS](guide/tts.md): Configure text-to-speech features and customize voice packs.
-- [PhraseCheck](guide/phrasecheck.md): Configure PhraseCheck to respond to messages in chat.
-- [Default Commands](guide/default-commands.md): Learn about the default commands included with Vayl.
-- [Custom Commands](guide/custom-commands.md): Configure custom commands to be used during your stream.
+---
+
+## Core Guides
+
+| Area | Description |
+|------|--------------|
+| [Actions](guide/actions.md) | Define and trigger custom bot actions |
+| [Conditional Actions](guide/conditional-actions.md) | Add `if / then` logic to automate responses |
+| [Events](guide/events.md) | Connect to Twitch events (follows, subs, raids, etc.) |
+| [Commands](guide/custom-commands.md) | Create and manage custom chat commands |
+| [PhraseCheck](guide/phrasecheck.md) | Auto-detect and respond to chat phrases |
+| [SFX](guide/sfx.md) | Configure sound effects playback |
+| [TTS](guide/tts.md) | Set up Text-to-Speech voices and triggers |
+| [Discord Webhooks](guide/discord-webhooks.md) | Bridge Twitch actions to Discord |
+| [Redeems](guide/redeems.md) | Handle channel-point redemptions |
+
+---
+
+## Reference
+
+| Reference | Description |
+|------------|-------------|
+| [Tag Reference](guide/tags.md) | Full list of supported dynamic tags |
+| [Error Codes](guide/errors.md) | Error types and how to troubleshoot them |
+| [Configuration Files](guide/configuration.md) | File structure and variables explained |
+| [Changelog](guide/changelog.md) | Recent updates and version notes |
+
+---
+
+## Developer Notes
+
+Vayl is built around modular YAML-driven logic:
+- No external hosting required — runs fully local.
+- Actions, events, and variables are fully customizable.
+- Supports Twitch’s modern EventSub WebSocket API.
+- Designed for low resource usage and transparent debugging.
+
+---
+
+## Latest Version
+
+**Download:** [Get Latest Build](https://github.com/vaylvn/vaylbot/releases/latest)
+
+---
+
+## License
+
+This documentation and related content are © 2025 [VaylVN](https://github.com/vaylvn).  
+For inquiries or issues, please use the [main repository’s issue tracker](https://github.com/vaylvn/vaylbot/issues).
+
 ---
