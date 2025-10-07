@@ -1,72 +1,96 @@
 # **Vayl Bot Quickstart Guide**
 
-Welcome to Vayl Bot! Follow this guide to quickly get your bot up and running.
+Welcome to Vayl Bot!  
+This guide will get your bot running in just a few minutes.
 
 ---
 
-## **Step 1: Download Vayl Bot**
+## **Step 1: Download Vayl**
 
-1. Go to the [Vayl Bot GitHub Releases Page](https://github.com/vaylvn/vaylbot/releases).
-2. Download the latest ZIP file.
-3. Extract the contents to a folder on your computer.
-
----
-
-## **Step 2: Configuration**
-
-1. Navigate to the `configuration` folder and open `configuration.yml` in a text editor of your choice.
-2. Update the following fields:
-   - **`connected-account`**: Set this to your Twitch username.
-     ```yaml
-     connected-account: your-twitch-username
-     ```
-   - **`obs-password`** *(optional)*: If you want OBS integration, set this to your OBS WebSocket password.
-     ```yaml
-     obs-password: your-obs-password
-     ```
-   - **`bug-auto-report`**: Enable or disable automatic bug reporting.
-     ```yaml
-     bug-auto-report: true
-     ```
-     **Note**: If enabled, a copy of the error log will be sent directly to the developer (viewable only by the developer). Be aware that the error log may include file paths, which could contain your username or other identifying information depending on your PC setup.
+1. Visit the [Vayl Bot GitHub Releases](https://github.com/vaylvn/vaylbot/releases/latest).
+2. Download the **latest ZIP file** (e.g., `Vayl.zip`).
+3. Extract it to a folder on your PC (e.g., `C:\Vayl`).
 
 ---
 
-## **Step 3: Run Vayl Bot**
+## **Step 2: Configure the Bot**
 
-1. Double-click `vayl.exe` to start the bot.
-2. A webpage will open, prompting you to grant access for Vayl Bot to your Twitch account. This is required to:
-   - Access events like subs, follows, raids, etc.
-   - Interact with chat.
-   - Use other Twitch API scopes.
-3. Complete the authorization process.
+1. Open the folder you just extracted.
+2. Navigate to:  
+   ```
+   configuration\configuration.yml
+   ```
+3. Open it in your preferred text editor (Notepad, Notepad++, VS Code, etc.).
+4. Update the following fields as needed:
+
+### **Basic Setup**
+```yaml
+connected-account: your-twitch-username
+bug-auto-report: true
+```
+- `connected-account`: Your Twitch username (lowercase).
+- `bug-auto-report`: Set to `false` if you prefer not to send crash reports.
+
+### **OBS Integration (optional)**
+```yaml
+obs:
+  host: localhost
+  port: 4455
+  password: your-obs-password
+```
+If you use **OBS WebSocket**, configure this section accordingly.  
+(Older `obs-password` format is deprecated — update to this format.)
 
 ---
 
-## **Step 4: Configure as Needed**
+## **Step 3: Run Vayl**
 
-After initial setup, you can:
-- Close the Vayl console.
-- Adjust additional configurations in `configuration.yml` or other files.
+1. Double-click `Vayl.exe`.
+2. When prompted, a browser window will open for Twitch authorization.  
+   Grant permissions so the bot can:
+   - Listen for Twitch events (subs, follows, raids, etc.)
+   - Send chat messages and announcements
+3. Once authorized, you can close the browser tab — setup will complete automatically.
 
-### **Reloading Configurations**
+---
 
-- **Restart Required**: Modifying certain configurations, such as registering new commands, phrases for PhraseCheck, or ModerationData, requires you to restart Vayl.
-- **Dynamic Updates**: Action lists are dynamically loaded and do not require a restart. You can modify them on the fly.
+## **Step 4: Verify and Customize**
 
-To reload configurations without restarting:
-- Use the command `!reload` in the chat.
+After the first launch, Vayl will generate its default folders:
+
+```
+configuration/
+data/
+variables/
+```
+
+You can now begin customizing:
+- **Events:** Set up responses to Twitch events in `data/events/`
+- **Actions:** Define command or timed actions using `.yml` files
+- **Variables:** Create counters, booleans, and text files in `data/variables/`
+
+---
+
+## **Step 5: Reload or Restart**
+
+- Most changes (actions, event triggers) reload automatically.  
+- Some configurations (commands, moderation, PhraseCheck) require a restart.  
+- You can also type `!reload` in chat to reload configurations manually.
 
 ---
 
 ## **Next Steps**
 
-Once Vayl Bot is running, explore the following guides:
-- [Actions Guide](actions.md): Set up and customize bot actions.
-- [Conditional Actions](conditional-actions.md): Use advanced logic for triggers.
-- [Events Guide](events.md): Automate responses to Twitch events.
-- [TTS Guide](tts.md): Configure text-to-speech for engaging interactions.
-- [PhraseCheck](phrasecheck.md): Configure PhraseCheck to respond to messages in chat.
+Explore these guides to unlock Vayl’s full potential:
+- [Actions Guide](actions.md)
+- [Conditional Actions](conditional-actions.md)
+- [Events Guide](events.md)
+- [TTS Setup](tts.md)
+- [PhraseCheck](phrasecheck.md)
 
-Enjoy your fully customizable chatbot experience!
+---
+
+### ✅ Done!
+
+You’ve now got Vayl running and ready to evolve with your stream.
 
