@@ -4,7 +4,7 @@ Actions define what Vayl should do when triggered by an event.
 
 All actions follow the format:
 ```yaml
-<action> | <required_arg> | [optional_arg]
+[action] | <required_arg> | [optional_arg]
 ```
 
 **Syntax Key:**
@@ -17,315 +17,360 @@ All actions follow the format:
 
 ## 🧩 **OBS Integration**
 
-<details>
-<summary><strong>obs:scene</strong> — Switch to a specific OBS scene</summary>
+<details><summary><strong>obs:scene</strong> — Switch to a specific OBS scene</summary>
 
-**Syntax:**
 ```yaml
 obs:scene | <scene_name>
 ```
-
-**Example:**
+Example:
 ```yaml
 - obs:scene | Starting Soon
 ```
-
-| Argument | Description |
-|-----------|-------------|
-| **scene_name** | The exact name of the OBS scene. |
-
 </details>
 
----
+<details><summary><strong>obs:show</strong> — Show a specific OBS source</summary>
 
-<details>
-<summary><strong>obs:show</strong> — Show a specific OBS source</summary>
-
-**Syntax:**
 ```yaml
-obs:show | <source>
+obs:show | <source_name>
 ```
-
-**Example:**
+Example:
 ```yaml
 - obs:show | Webcam
 ```
-
-| Argument | Description |
-|-----------|-------------|
-| **source** | Source name in OBS. |
-
 </details>
 
----
+<details><summary><strong>obs:hide</strong> — Hide a specific OBS source</summary>
 
-<details>
-<summary><strong>obs:label</strong> — Update the text or color of a label source</summary>
-
-**Syntax:**
 ```yaml
-obs:label | <source> | <text> | [color]
+obs:hide | <source_name>
 ```
+Example:
+```yaml
+- obs:hide | AlertBox
+```
+</details>
 
-**Example:**
+<details><summary><strong>obs:toggle</strong> — Toggle visibility of an OBS source</summary>
+
+```yaml
+obs:toggle | <source_name>
+```
+Example:
+```yaml
+- obs:toggle | ChatOverlay
+```
+</details>
+
+<details><summary><strong>obs:label</strong> — Update label text or color</summary>
+
+```yaml
+obs:label | <source_name> | <text> | [color]
+```
+Example:
 ```yaml
 - obs:label | StreamTitle | [counter:subs] Subs | #FFFFFF
 ```
+</details>
 
-| Argument | Description |
-|-----------|-------------|
-| **source** | Label source name in OBS. |
-| **text** | Text content to display. |
-| **color** | Optional hex color (e.g. `#FFFFFF`). |
+<details><summary><strong>obs:mediafile</strong> — Change media file for a source</summary>
 
+```yaml
+obs:mediafile | <source_name> | <file_path>
+```
+Example:
+```yaml
+- obs:mediafile | VideoSource | media/intro.mp4
+```
+</details>
+
+<details><summary><strong>obs:image</strong> — Change the image file for an image source</summary>
+
+```yaml
+obs:image | <source_name> | <file_path>
+```
+Example:
+```yaml
+- obs:image | Overlay | images/new_banner.png
+```
+</details>
+
+<details><summary><strong>obs:media</strong> — Control media source playback</summary>
+
+```yaml
+obs:media | <source_name> | <play/pause/stop/restart/next/previous/position>
+```
+Example:
+```yaml
+- obs:media | IntroVideo | play
+```
+</details>
+
+<details><summary><strong>obs:slideshow</strong> — Control a slideshow source</summary>
+
+```yaml
+obs:slideshow | <source_name> | <play/pause/stop/restart/next/previous/position>
+```
+Example:
+```yaml
+- obs:slideshow | Screens | next
+```
+</details>
+
+<details><summary><strong>obs:filter</strong> — Enable or disable a source filter</summary>
+
+```yaml
+obs:filter | <source_name> | <filter_name> | <enabled/disabled>
+```
+Example:
+```yaml
+- obs:filter | Camera | Blur | enabled
+```
+</details>
+
+<details><summary><strong>obs:audio</strong> — Adjust an audio source’s volume</summary>
+
+```yaml
+obs:audio | <source_name> | <percentage> | <steps> | <duration>
+```
+Example:
+```yaml
+- obs:audio | Music | 50 | 5 | 2
+```
 </details>
 
 ---
 
-## 💬 **Chat & Messaging**
+## 💬 **Chat & Moderation**
 
-<details>
-<summary><strong>chat</strong> — Send a message in chat</summary>
+<details><summary><strong>chat</strong> — Send a message in chat</summary>
 
-**Syntax:**
 ```yaml
 chat | <message>
 ```
-
-**Example:**
+Example:
 ```yaml
 - chat | Hello [user]!
 ```
-
-| Argument | Description |
-|-----------|-------------|
-| **message** | Message to send. Supports tags. |
-
 </details>
 
----
+<details><summary><strong>announce</strong> — Send a Twitch announcement</summary>
 
-<details>
-<summary><strong>announce</strong> — Send an announcement message</summary>
-
-**Syntax:**
 ```yaml
-announce | <message>
+announce | <message> | [blue/green/orange/purple/primary]
 ```
-
-**Example:**
+Example:
 ```yaml
-- announce | Stream starting soon!
+- announce | Stream starting soon! | orange
 ```
+</details>
 
-| Argument | Description |
-|-----------|-------------|
-| **message** | Text for the announcement. |
+<details><summary><strong>vip</strong> — Add or remove a Twitch VIP</summary>
 
+```yaml
+vip | <add/remove> | <username>
+```
+Example:
+```yaml
+- vip | add | SomeUser
+```
+</details>
+
+<details><summary><strong>timeout</strong> — Timeout a user</summary>
+
+```yaml
+timeout | <user> | <duration> | [reason]
+```
+Example:
+```yaml
+- timeout | [user] | 300 | Spam detected
+```
+</details>
+
+<details><summary><strong>createclip</strong> — Create a Twitch clip</summary>
+
+```yaml
+createclip
+```
+Example:
+```yaml
+- createclip
+```
+</details>
+
+<details><summary><strong>addmarker</strong> — Add a stream marker</summary>
+
+```yaml
+addmarker
+```
+Example:
+```yaml
+- addmarker
+```
 </details>
 
 ---
 
 ## 🔢 **Variables**
 
-<details>
-<summary><strong>counter</strong> — Modify a numeric counter variable</summary>
+<details><summary><strong>text</strong> — Modify text variables</summary>
 
-**Syntax:**
 ```yaml
-counter | <name> | <action> | [amount]
+text | <variable_name> | <set/append> | <text>
 ```
-
-**Example:**
-```yaml
-- counter | deaths | increase | 1
-```
-
-| Argument | Description |
-|-----------|-------------|
-| **name** | Counter variable name. |
-| **action** | One of `set`, `increase`, `decrease`, `multiply`, `divide`. |
-| **amount** | Optional numeric value to apply. |
-
-</details>
-
----
-
-<details>
-<summary><strong>list</strong> — Modify list variables</summary>
-
-**Syntax:**
-```yaml
-list | <name> | <action> | [text]
-```
-
-**Example:**
-```yaml
-- list | viewers | add | [user]
-```
-
-| Argument | Description |
-|-----------|-------------|
-| **name** | List variable name. |
-| **action** | One of `add`, `remove`, `clear`. |
-| **text** | Optional item text for add/remove. |
-
-</details>
-
----
-
-<details>
-<summary><strong>text</strong> — Modify text variables</summary>
-
-**Syntax:**
-```yaml
-text | <name> | <action> | <text>
-```
-
-**Example:**
+Example:
 ```yaml
 - text | status | set | Stream is live!
 ```
+</details>
 
-| Argument | Description |
-|-----------|-------------|
-| **name** | Variable name. |
-| **action** | One of `set` or `append`. |
-| **text** | The text content to use. |
+<details><summary><strong>counter</strong> — Modify numeric counters</summary>
 
+```yaml
+counter | <variable_name> | <set/increase/decrease/multiply/divide> | <amount>
+```
+Example:
+```yaml
+- counter | deaths | increase | 1
+```
+</details>
+
+<details><summary><strong>counter2</strong> — Modify counters using an equation</summary>
+
+```yaml
+counter2 | <variable_name> | <equation>
+```
+Example:
+```yaml
+- counter2 | points | value * 2 + 10
+```
+</details>
+
+<details><summary><strong>boolean</strong> — Set a boolean variable</summary>
+
+```yaml
+boolean | <variable_name> | <true/false>
+```
+Example:
+```yaml
+- boolean | isActive | true
+```
+</details>
+
+<details><summary><strong>table</strong> — Modify a table variable</summary>
+
+```yaml
+table | <table_name> | <entry_name> | <entry_value>
+```
+Example:
+```yaml
+- table | stats | accuracy | 97%
+```
+</details>
+
+<details><summary><strong>list</strong> — Modify list variables</summary>
+
+```yaml
+list | <variable_name> | <clear/add/remove> | [text]
+```
+Example:
+```yaml
+- list | viewers | add | [user]
+```
 </details>
 
 ---
 
 ## ⚙️ **Utility**
 
-<details>
-<summary><strong>sound</strong> — Play a sound file</summary>
+<details><summary><strong>playsound</strong> — Play a sound by name</summary>
 
-**Syntax:**
 ```yaml
-sound | <file_name>
+playsound | <sound_name>
 ```
-
-**Example:**
+Example:
 ```yaml
-- sound | ding.wav
+- playsound | alert.wav
 ```
-
-| Argument | Description |
-|-----------|-------------|
-| **file_name** | The sound file name (must exist in the `sounds` folder). |
-
 </details>
 
----
+<details><summary><strong>wait</strong> — Pause execution</summary>
 
-<details>
-<summary><strong>wait</strong> — Pause execution for a set number of seconds</summary>
-
-**Syntax:**
 ```yaml
 wait | <seconds>
 ```
-
-**Example:**
+Example:
 ```yaml
 - wait | 5
 ```
-
-| Argument | Description |
-|-----------|-------------|
-| **seconds** | Time to wait (can be decimal). |
-
 </details>
 
----
+<details><summary><strong>console</strong> — Print text to the Vayl console</summary>
 
-<details>
-<summary><strong>console</strong> — Print a message to the Vayl console</summary>
-
-**Syntax:**
 ```yaml
 console | <message>
 ```
-
-**Example:**
+Example:
 ```yaml
-- console | Action triggered successfully
+- console | Event triggered successfully
 ```
+</details>
 
-| Argument | Description |
-|-----------|-------------|
-| **message** | Text to print to the console. |
+<details><summary><strong>cmd</strong> — Execute a system command</summary>
 
+```yaml
+cmd | <command>
+```
+Example:
+```yaml
+- cmd | echo Hello World
+```
+</details>
+
+<details><summary><strong>actionpack</strong> — Run a predefined action pack</summary>
+
+```yaml
+actionpack | <name>
+```
+Example:
+```yaml
+- actionpack | on_sub
+```
 </details>
 
 ---
 
 ## 🧠 **Advanced / System**
 
-<details>
-<summary><strong>conditional</strong> — Trigger a conditional from configuration</summary>
+<details><summary><strong>conditional</strong> — Trigger a conditional</summary>
 
-**Syntax:**
 ```yaml
-conditional | <name>
+conditional | <conditional_name>
 ```
-
-**Example:**
+Example:
 ```yaml
 - conditional | hype_start
 ```
-
-| Argument | Description |
-|-----------|-------------|
-| **name** | Conditional name or `name:subname`. |
-
+**Learn more:** See the [Conditionals Reference](conditionals.md) for detailed usage.
 </details>
 
----
+<details><summary><strong>webhook</strong> — Trigger a webhook</summary>
 
-<details>
-<summary><strong>webhook</strong> — Trigger a configured webhook</summary>
-
-**Syntax:**
 ```yaml
-webhook | <name>
+webhook | <webhook_name>
 ```
-
-**Example:**
+Example:
 ```yaml
 - webhook | discord_notify
 ```
-
-| Argument | Description |
-|-----------|-------------|
-| **name** | Webhook name (defined in `configuration/webhook`). |
-
 </details>
 
----
+<details><summary><strong>tts</strong> — Speak text using Text-to-Speech</summary>
 
-<details>
-<summary><strong>tts</strong> — Speak a message aloud via Text-to-Speech</summary>
-
-**Syntax:**
 ```yaml
-tts | <voice> | <message> | [halt] | [char_limit]
+tts | <voice> | <message> | [true/false] | [character_limit]
 ```
-
-**Example:**
+Example:
 ```yaml
 - tts | Ivy | [user_input] | true | 500
 ```
-
-| Argument | Description |
-|-----------|-------------|
-| **voice** | Voice name (e.g. `Ivy`, `Brian`). |
-| **message** | Message text to speak. |
-| **halt** | Optional boolean — wait for speech before continuing. |
-| **char_limit** | Optional integer — skip if message exceeds this length. |
-
 </details>
-
----
