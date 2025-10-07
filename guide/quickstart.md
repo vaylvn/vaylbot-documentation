@@ -1,6 +1,5 @@
 # **Vayl Bot Quickstart Guide**
 
-Welcome to Vayl Bot!  
 This guide will get your bot running in just a few minutes.
 
 ---
@@ -8,7 +7,7 @@ This guide will get your bot running in just a few minutes.
 ## **Step 1: Download Vayl**
 
 1. Visit the [Vayl Bot GitHub Releases](https://github.com/vaylvn/vaylbot/releases/latest).
-2. Download the **latest ZIP file** (e.g., `Vayl.zip`).
+2. Download the **latest ZIP file**
 3. Extract it to a folder on your PC (e.g., `C:\Vayl`).
 
 ---
