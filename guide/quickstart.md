@@ -90,7 +90,3 @@ Explore these guides to unlock Vayl’s full potential:
 
 ---
 
-### ✅ Done!
-
-You’ve now got Vayl running and ready to evolve with your stream.
-
