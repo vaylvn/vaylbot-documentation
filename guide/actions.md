@@ -16,7 +16,6 @@ All actions follow the format:
 ---
 
 ## 🧩 **OBS Integration**
-
 <details><summary><strong>obs:scene</strong> — Switch to a specific OBS scene</summary>
 
 ```yaml
@@ -24,272 +23,423 @@ obs:scene | <scene_name>
 ```
 Example:
 ```yaml
-- obs:scene | Starting Soon
+- obs:scene | <scene_name>
 ```
 </details>
 
-<details><summary><strong>obs:show</strong> — Show a specific OBS source</summary>
+<details><summary><strong>obs:show</strong> — Show an OBS source</summary>
 
 ```yaml
-obs:show | <source_name>
+obs:show | <source>
 ```
 Example:
 ```yaml
-- obs:show | Webcam
+- obs:show | <source>
 ```
 </details>
 
-<details><summary><strong>obs:hide</strong> — Hide a specific OBS source</summary>
+<details><summary><strong>obs:hide</strong> — Hide an OBS source</summary>
 
 ```yaml
-obs:hide | <source_name>
+obs:hide | <source>
 ```
 Example:
 ```yaml
-- obs:hide | AlertBox
+- obs:hide | <source>
 ```
 </details>
 
 <details><summary><strong>obs:toggle</strong> — Toggle visibility of an OBS source</summary>
 
 ```yaml
-obs:toggle | <source_name>
+obs:toggle | <source>
 ```
 Example:
 ```yaml
-- obs:toggle | ChatOverlay
-```
-</details>
-
-<details><summary><strong>obs:label</strong> — Update label text or color</summary>
-
-```yaml
-obs:label | <source_name> | <text> | [color]
-```
-Example:
-```yaml
-- obs:label | StreamTitle | [counter:subs] Subs | #FFFFFF
-```
-</details>
-
-<details><summary><strong>obs:mediafile</strong> — Change media file for a source</summary>
-
-```yaml
-obs:mediafile | <source_name> | <file_path>
-```
-Example:
-```yaml
-- obs:mediafile | VideoSource | media/intro.mp4
+- obs:toggle | <source>
 ```
 </details>
 
 <details><summary><strong>obs:image</strong> — Change the image file for an image source</summary>
 
 ```yaml
-obs:image | <source_name> | <file_path>
+obs:image | <source> | <file_path>
 ```
 Example:
 ```yaml
-- obs:image | Overlay | images/new_banner.png
+- obs:image | <source> | <file_path>
 ```
 </details>
 
-<details><summary><strong>obs:media</strong> — Control media source playback</summary>
+<details><summary><strong>obs:label</strong> — Update a label’s text, color, or style</summary>
 
 ```yaml
-obs:media | <source_name> | <play/pause/stop/restart/next/previous/position>
+obs:label | <source> | <text> | [color] | [size] | [font]
 ```
 Example:
 ```yaml
-- obs:media | IntroVideo | play
+- obs:label | <source> | <text> | [color] | [size] | [font]
+```
+</details>
+
+<details><summary><strong>obs:mediafile</strong> — Change a media source’s file</summary>
+
+```yaml
+obs:mediafile | <source> | <file_path>
+```
+Example:
+```yaml
+- obs:mediafile | <source> | <file_path>
 ```
 </details>
 
 <details><summary><strong>obs:slideshow</strong> — Control a slideshow source</summary>
 
 ```yaml
-obs:slideshow | <source_name> | <play/pause/stop/restart/next/previous/position>
+obs:slideshow | <source> | <state>
 ```
 Example:
 ```yaml
-- obs:slideshow | Screens | next
+- obs:slideshow | <source> | <state>
 ```
 </details>
 
-<details><summary><strong>obs:filter</strong> — Enable or disable a source filter</summary>
+<details><summary><strong>obs:filteron</strong> — Enable a source filter</summary>
 
 ```yaml
-obs:filter | <source_name> | <filter_name> | <enabled/disabled>
+obs:filteron | <source> | <filter>
 ```
 Example:
 ```yaml
-- obs:filter | Camera | Blur | enabled
+- obs:filteron | <source> | <filter>
+```
+</details>
+
+<details><summary><strong>obs:filteroff</strong> — Disable a source filter</summary>
+
+```yaml
+obs:filteroff | <source> | <filter>
+```
+Example:
+```yaml
+- obs:filteroff | <source> | <filter>
 ```
 </details>
 
 <details><summary><strong>obs:audio</strong> — Adjust an audio source’s volume</summary>
 
 ```yaml
-obs:audio | <source_name> | <percentage> | <steps> | <duration>
+obs:audio | <source> | <percentage> | <steps> | <duration>
 ```
 Example:
 ```yaml
-- obs:audio | Music | 50 | 5 | 2
+- obs:audio | <source> | <percentage> | <steps> | <duration>
 ```
 </details>
 
 ---
 
 ## 💬 **Chat & Moderation**
-
-<details><summary><strong>chat</strong> — Send a message in chat</summary>
+<details><summary><strong>chat:message</strong> — Send a message in chat</summary>
 
 ```yaml
-chat | <message>
+chat:message | <message>
 ```
 Example:
 ```yaml
-- chat | Hello [user]!
+- chat:message | <message>
 ```
 </details>
 
-<details><summary><strong>announce</strong> — Send a Twitch announcement</summary>
+<details><summary><strong>chat:announce</strong> — Send a Twitch announcement</summary>
 
 ```yaml
-announce | <message> | [blue/green/orange/purple/primary]
+chat:announce | <message>
 ```
 Example:
 ```yaml
-- announce | Stream starting soon! | orange
+- chat:announce | <message>
 ```
 </details>
 
-<details><summary><strong>vip</strong> — Add or remove a Twitch VIP</summary>
+<details><summary><strong>vip:add</strong> — Add a Twitch VIP</summary>
 
 ```yaml
-vip | <add/remove> | <username>
+vip:add | <username>
 ```
 Example:
 ```yaml
-- vip | add | SomeUser
+- vip:add | <username>
+```
+</details>
+
+<details><summary><strong>vip:remove</strong> — Remove a Twitch VIP</summary>
+
+```yaml
+vip:remove | <username>
+```
+Example:
+```yaml
+- vip:remove | <username>
 ```
 </details>
 
 <details><summary><strong>timeout</strong> — Timeout a user</summary>
 
 ```yaml
-timeout | <user> | <duration> | [reason]
+timeout | <username> | <duration> | [reason]
 ```
 Example:
 ```yaml
-- timeout | [user] | 300 | Spam detected
+- timeout | <username> | <duration> | [reason]
 ```
 </details>
 
-<details><summary><strong>createclip</strong> — Create a Twitch clip</summary>
+<details><summary><strong>stream:clip</strong> — Create a Twitch clip</summary>
 
 ```yaml
-createclip
+stream:clip
 ```
 Example:
 ```yaml
-- createclip
+- stream:clip
 ```
 </details>
 
-<details><summary><strong>addmarker</strong> — Add a stream marker</summary>
+<details><summary><strong>stream:marker</strong> — Add a stream marker</summary>
 
 ```yaml
-addmarker
+stream:marker
 ```
 Example:
 ```yaml
-- addmarker
+- stream:marker
+```
+</details>
+
+<details><summary><strong>stream:raid</strong> — Raid another streamer</summary>
+
+```yaml
+stream:raid | <username>
+```
+Example:
+```yaml
+- stream:raid | <username>
+```
+</details>
+
+<details><summary><strong>redeem:create</strong> — Create a channel point reward</summary>
+
+```yaml
+redeem:create | <name>
+```
+Example:
+```yaml
+- redeem:create | <name>
+```
+</details>
+
+<details><summary><strong>redeem:enable</strong> — Enable a channel point reward</summary>
+
+```yaml
+redeem:enable | <name>
+```
+Example:
+```yaml
+- redeem:enable | <name>
+```
+</details>
+
+<details><summary><strong>redeem:disable</strong> — Disable a channel point reward</summary>
+
+```yaml
+redeem:disable | <name>
+```
+Example:
+```yaml
+- redeem:disable | <name>
+```
+</details>
+
+<details><summary><strong>redeem:toggle</strong> — Toggle a channel point reward</summary>
+
+```yaml
+redeem:toggle | <name>
+```
+Example:
+```yaml
+- redeem:toggle | <name>
 ```
 </details>
 
 ---
 
 ## 🔢 **Variables**
-
-<details><summary><strong>text</strong> — Modify text variables</summary>
+<details><summary><strong>text:set</strong> — Set a text variable</summary>
 
 ```yaml
-text | <variable_name> | <set/append> | <text>
+text:set | <name> | <text>
 ```
 Example:
 ```yaml
-- text | status | set | Stream is live!
+- text:set | <name> | <text>
 ```
 </details>
 
-<details><summary><strong>counter</strong> — Modify numeric counters</summary>
+<details><summary><strong>text:prepend</strong> — Prepend text to a variable</summary>
 
 ```yaml
-counter | <variable_name> | <set/increase/decrease/multiply/divide> | <amount>
+text:prepend | <name> | <text>
 ```
 Example:
 ```yaml
-- counter | deaths | increase | 1
+- text:prepend | <name> | <text>
 ```
 </details>
 
-<details><summary><strong>counter2</strong> — Modify counters using an equation</summary>
+<details><summary><strong>text:append</strong> — Append text to a variable</summary>
 
 ```yaml
-counter2 | <variable_name> | <equation>
+text:append | <name> | <text>
 ```
 Example:
 ```yaml
-- counter2 | points | value * 2 + 10
+- text:append | <name> | <text>
 ```
 </details>
 
-<details><summary><strong>boolean</strong> — Set a boolean variable</summary>
+<details><summary><strong>text:clear</strong> — Clear text from a variable</summary>
 
 ```yaml
-boolean | <variable_name> | <true/false>
+text:clear | <name>
 ```
 Example:
 ```yaml
-- boolean | isActive | true
+- text:clear | <name>
+```
+</details>
+
+<details><summary><strong>integer</strong> — Modify an integer variable using an equation</summary>
+
+```yaml
+integer | <name> | <equation>
+```
+Example:
+```yaml
+- integer | <name> | <equation>
 ```
 </details>
 
 <details><summary><strong>table</strong> — Modify a table variable</summary>
 
 ```yaml
-table | <table_name> | <entry_name> | <entry_value>
+table | <name> | <entry> | <value>
 ```
 Example:
 ```yaml
-- table | stats | accuracy | 97%
+- table | <name> | <entry> | <value>
 ```
 </details>
 
-<details><summary><strong>list</strong> — Modify list variables</summary>
+<details><summary><strong>list:append</strong> — Add an item to a list</summary>
 
 ```yaml
-list | <variable_name> | <clear/add/remove> | [text]
+list:append | <name> | <text>
 ```
 Example:
 ```yaml
-- list | viewers | add | [user]
+- list:append | <name> | <text>
+```
+</details>
+
+<details><summary><strong>list:prepend</strong> — Add an item to the start of a list</summary>
+
+```yaml
+list:prepend | <name> | <text>
+```
+Example:
+```yaml
+- list:prepend | <name> | <text>
+```
+</details>
+
+<details><summary><strong>list:remove</strong> — Remove an item from a list</summary>
+
+```yaml
+list:remove | <name> | <text>
+```
+Example:
+```yaml
+- list:remove | <name> | <text>
+```
+</details>
+
+<details><summary><strong>list:removeall</strong> — Remove all matching items from a list</summary>
+
+```yaml
+list:removeall | <name> | <text>
+```
+Example:
+```yaml
+- list:removeall | <name> | <text>
+```
+</details>
+
+<details><summary><strong>list:clear</strong> — Clear all items from a list</summary>
+
+```yaml
+list:clear | <name>
+```
+Example:
+```yaml
+- list:clear | <name>
+```
+</details>
+
+<details><summary><strong>boolean:true</strong> — Set a boolean to true</summary>
+
+```yaml
+boolean:true | <name>
+```
+Example:
+```yaml
+- boolean:true | <name>
+```
+</details>
+
+<details><summary><strong>boolean:false</strong> — Set a boolean to false</summary>
+
+```yaml
+boolean:false | <name>
+```
+Example:
+```yaml
+- boolean:false | <name>
+```
+</details>
+
+<details><summary><strong>boolean:toggle</strong> — Toggle a boolean value</summary>
+
+```yaml
+boolean:toggle | <name>
+```
+Example:
+```yaml
+- boolean:toggle | <name>
 ```
 </details>
 
 ---
 
 ## ⚙️ **Utility**
-
-<details><summary><strong>playsound</strong> — Play a sound by name</summary>
+<details><summary><strong>playsound</strong> — Play a sound file</summary>
 
 ```yaml
 playsound | <sound_name>
 ```
 Example:
 ```yaml
-- playsound | alert.wav
+- playsound | <sound_name>
 ```
 </details>
 
@@ -300,29 +450,18 @@ wait | <seconds>
 ```
 Example:
 ```yaml
-- wait | 5
+- wait | <seconds>
 ```
 </details>
 
-<details><summary><strong>console</strong> — Print text to the Vayl console</summary>
+<details><summary><strong>syscmd</strong> — Execute a system command</summary>
 
 ```yaml
-console | <message>
+syscmd | <command>
 ```
 Example:
 ```yaml
-- console | Event triggered successfully
-```
-</details>
-
-<details><summary><strong>cmd</strong> — Execute a system command</summary>
-
-```yaml
-cmd | <command>
-```
-Example:
-```yaml
-- cmd | echo Hello World
+- syscmd | <command>
 ```
 </details>
 
@@ -333,44 +472,54 @@ actionpack | <name>
 ```
 Example:
 ```yaml
-- actionpack | on_sub
+- actionpack | <name>
+```
+</details>
+
+<details><summary><strong>notify</strong> — Display a notification</summary>
+
+```yaml
+notify | <text>
+```
+Example:
+```yaml
+- notify | <text>
 ```
 </details>
 
 ---
 
 ## 🧠 **Advanced / System**
-
 <details><summary><strong>conditional</strong> — Trigger a conditional</summary>
 
 ```yaml
-conditional | <conditional_name>
+conditional | <name>
 ```
 Example:
 ```yaml
-- conditional | hype_start
+- conditional | <name>
 ```
-**Learn more:** See the [Conditionals Reference](conditionals.md) for detailed usage.
+**Learn more:** See the [Conditionals Reference](conditionals.md).
 </details>
 
 <details><summary><strong>webhook</strong> — Trigger a webhook</summary>
 
 ```yaml
-webhook | <webhook_name>
+webhook | <name>
 ```
 Example:
 ```yaml
-- webhook | discord_notify
+- webhook | <name>
 ```
 </details>
 
-<details><summary><strong>tts</strong> — Speak text using Text-to-Speech</summary>
+<details><summary><strong>tts</strong> — Speak a message using Text-to-Speech</summary>
 
 ```yaml
-tts | <voice> | <message> | [true/false] | [character_limit]
+tts | <voice> | <message> | [true/false] | [limit]
 ```
 Example:
 ```yaml
-- tts | Ivy | [user_input] | true | 500
+- tts | <voice> | <message> | [true/false] | [limit]
 ```
 </details>
