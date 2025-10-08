@@ -1,4 +1,4 @@
-# Twitch Event Reference
+# Events
 
 Each supported event has a corresponding configuration file inside:
 
